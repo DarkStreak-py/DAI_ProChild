@@ -5,24 +5,299 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/FirstFragment">
 
+    <navigation
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/FirstFragment">
+
+        <fragment
+            android:id="@+id/FirstFragment"
+            android:name="com.example.dai_prochild.FirstFragment"
+            android:label="@string/first_fragment_label"
+            tools:layout="@layout/fragment_first">
+            <action
+                android:id="@+id/action_FirstFragment_to_SecondFragment"
+                app:destination="@id/SecondFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/SecondFragment"
+            android:name="com.example.dai_prochild.SecondFragment"
+            android:label="@string/second_fragment_label"
+            tools:layout="@layout/fragment_second">
+            <action
+                android:id="@+id/action_SecondFragment_to_FirstFragment"
+                app:destination="@id/FirstFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/menu_Principal"
+            android:name="com.example.dai_prochild.Menu_Principal"
+            android:label="menu_principal"
+            tools:layout="@layout/menu_principal" />
+        <fragment
+            android:id="@+id/perfil"
+            android:name="com.example.dai_prochild.Perfil"
+            android:label="perfil"
+            tools:layout="@layout/perfil" />
+        <fragment
+            android:id="@+id/menu_PrincipalInstituicao"
+            android:name="com.example.dai_prochild.Menu_PrincipalInstituicao"
+            android:label="menu_principal_instituicao"
+            tools:layout="@layout/menu_principal_instituicao" />
+        <fragment
+            android:id="@+id/menu_PrincipalGuardiao"
+            android:name="com.example.dai_prochild.Menu_PrincipalGuardiao"
+            android:label="menu_principal_guardiao"
+            tools:layout="@layout/menu_principal_guardiao" />
+        <fragment
+            android:id="@+id/forum4"
+            android:name="com.example.dai_prochild.Forum"
+            android:label="forum"
+            tools:layout="@layout/forum" />
+        <fragment
+            android:id="@+id/materiais"
+            android:name="com.example.dai_prochild.Materiais"
+            android:label="materias"
+            tools:layout="@layout/materias" />
+        <fragment
+            android:id="@+id/direitosInserir"
+            android:name="com.example.dai_prochild.DireitosInserir"
+            android:label="direitos_inserir"
+            tools:layout="@layout/direitos_inserir" />
+        <fragment
+            android:id="@+id/eventos"
+            android:name="com.example.dai_prochild.Eventos"
+            android:label="eventos"
+            tools:layout="@layout/eventos" />
+        <fragment
+            android:id="@+id/sugestoes"
+            android:name="com.example.dai_prochild.Sugestoes"
+            android:label="sugestoes"
+            tools:layout="@layout/sugestoes" />
+        <fragment
+            android:id="@+id/denuncias"
+            android:name="com.example.dai_prochild.Denuncias"
+            android:label="denuncias"
+            tools:layout="@layout/denuncias" />
+    </navigation>
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.dai_prochild.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
-
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_menu_Principal"
+            app:destination="@id/menu_Principal" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.dai_prochild.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
-
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_Principal"
+        android:name="com.example.dai_prochild.Menu_Principal"
+        android:label="menu_principal"
+        tools:layout="@layout/menu_principal" >
+        <action
+            android:id="@+id/action_menu_Principal_to_forum4"
+            app:destination="@id/forum4" />
+        <action
+            android:id="@+id/action_menu_Principal_to_direitos"
+            app:destination="@id/direitos" />
+        <action
+            android:id="@+id/action_menu_Principal_to_eventos"
+            app:destination="@id/eventos" />
+        <action
+            android:id="@+id/action_menu_Principal_to_denuncias"
+            app:destination="@id/denuncias" />
+        <action
+            android:id="@+id/action_menu_Principal_to_linhaApoio"
+            app:destination="@id/linhaApoio" />
+        <action
+            android:id="@+id/action_menu_Principal_to_chat_Duvidas"
+            app:destination="@id/chat_Duvidas" />
+        <action
+            android:id="@+id/action_menu_Principal_to_materiais2"
+            app:destination="@id/materiais2" />
+        <action
+            android:id="@+id/action_menu_Principal_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfil"
+        android:name="com.example.dai_prochild.Perfil"
+        android:label="perfil"
+        tools:layout="@layout/perfil" >
+        <action
+            android:id="@+id/action_perfil_to_menu_Principal"
+            app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_perfil_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
+        <action
+            android:id="@+id/action_perfil_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_PrincipalInstituicao"
+        android:name="com.example.dai_prochild.Menu_PrincipalInstituicao"
+        android:label="menu_principal_instituicao"
+        tools:layout="@layout/menu_principal_instituicao" >
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_direitos"
+            app:destination="@id/direitos" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_materiais2"
+            app:destination="@id/materiais2" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_sugestoes"
+            app:destination="@id/sugestoes" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_perfil"
+            app:destination="@id/perfil" />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_PrincipalGuardiao"
+        android:name="com.example.dai_prochild.Menu_PrincipalGuardiao"
+        android:label="menu_principal_guardiao"
+        tools:layout="@layout/menu_principal_guardiao" >
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_forum4"
+            app:destination="@id/forum4" />
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_direitosInserir"
+            app:destination="@id/direitosInserir" />
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_eventos_Inserir"
+            app:destination="@id/eventos_Inserir" />
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_materiais_Inserir"
+            app:destination="@id/materiais_Inserir" />
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_perfil"
+            app:destination="@id/perfil" />
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_forum42"
+            app:destination="@id/forum4" />
+    </fragment>
+    <fragment
+        android:id="@+id/forum4"
+        android:name="com.example.dai_prochild.Forum"
+        android:label="forum"
+        tools:layout="@layout/forum" >
+        <action
+            android:id="@+id/action_forum4_to_menu_Principal"
+            app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_forum4_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
+        <action
+            android:id="@+id/action_forum4_to_menu_PrincipalGuardiao2"
+            app:destination="@id/menu_PrincipalGuardiao" />
+    </fragment>
+    <fragment
+        android:id="@+id/direitosInserir"
+        android:name="com.example.dai_prochild.DireitosInserir"
+        android:label="direitos_inserir"
+        tools:layout="@layout/direitos_inserir" >
+        <action
+            android:id="@+id/action_direitosInserir_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventos"
+        android:name="com.example.dai_prochild.Eventos"
+        android:label="eventos"
+        tools:layout="@layout/eventos" >
+        <action
+            android:id="@+id/action_eventos_to_menu_Principal"
+            app:destination="@id/menu_Principal" />
+    </fragment>
+    <fragment
+        android:id="@+id/sugestoes"
+        android:name="com.example.dai_prochild.Sugestoes"
+        android:label="sugestoes"
+        tools:layout="@layout/sugestoes" >
+        <action
+            android:id="@+id/action_sugestoes_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
+    </fragment>
+    <fragment
+        android:id="@+id/denuncias"
+        android:name="com.example.dai_prochild.Denuncias"
+        android:label="denuncias"
+        tools:layout="@layout/denuncias" >
+        <action
+            android:id="@+id/action_denuncias_to_menu_Principal"
+            app:destination="@id/menu_Principal" />
+    </fragment>
+    <fragment
+        android:id="@+id/linhaApoio"
+        android:name="com.example.dai_prochild.LinhaApoio"
+        android:label="linhaapoio"
+        tools:layout="@layout/linhaapoio" >
+        <action
+            android:id="@+id/action_linhaApoio_to_menu_Principal"
+            app:destination="@id/menu_Principal" />
+    </fragment>
+    <fragment
+        android:id="@+id/chat_Duvidas"
+        android:name="com.example.dai_prochild.Chat_Duvidas"
+        android:label="chat_duvidas"
+        tools:layout="@layout/chat_duvidas" >
+        <action
+            android:id="@+id/action_chat_Duvidas_to_menu_Principal"
+            app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_chat_Duvidas_to_menu_Principal2"
+            app:destination="@id/menu_Principal" />
+    </fragment>
+    <fragment
+        android:id="@+id/direitos"
+        android:name="com.example.dai_prochild.Direitos"
+        android:label="direitos"
+        tools:layout="@layout/direitos" >
+        <action
+            android:id="@+id/action_direitos_to_menu_Principal"
+            app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_direitos_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventos_Inserir"
+        android:name="com.example.dai_prochild.Eventos_Inserir"
+        android:label="eventos_inserir"
+        tools:layout="@layout/eventos_inserir" >
+        <action
+            android:id="@+id/action_eventos_Inserir_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
+    </fragment>
+    <fragment
+        android:id="@+id/materiais_Inserir"
+        android:name="com.example.dai_prochild.Materiais_Inserir"
+        android:label="materias_inserir"
+        tools:layout="@layout/materias_inserir" >
+        <action
+            android:id="@+id/action_materiais_Inserir_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
+    </fragment>
+    <fragment
+        android:id="@+id/materiais2"
+        android:name="com.example.dai_prochild.Materiais"
+        android:label="materias"
+        tools:layout="@layout/materias" >
+        <action
+            android:id="@+id/action_materiais2_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
+        <action
+            android:id="@+id/action_materiais2_to_menu_Principal"
+            app:destination="@id/menu_Principal" />
     </fragment>
 </navigation>
