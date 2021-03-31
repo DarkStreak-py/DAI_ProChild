@@ -48,7 +48,7 @@
             android:background="@android:color/white"
             app:srcCompat="@mipmap/user_img_round"
             tools:layout_editor_absoluteX="371dp"
-            tools:layout_editor_absoluteY="727dp" />
+            tools:layout_editor_absoluteY="731dp" />
 
         <ImageButton
             android:id="@+id/btn_direitos"

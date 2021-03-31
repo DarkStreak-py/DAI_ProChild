@@ -7,31 +7,31 @@
     tools:context=".FirstFragment">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButton2"
         style="@android:style/Widget.DeviceDefault.ImageButton"
         android:layout_width="202dp"
         android:layout_height="203dp"
-        android:layout_marginStart="65dp"
-        android:layout_marginLeft="65dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
         android:layout_marginTop="72dp"
         android:layout_marginBottom="71dp"
-        android:background="@color/black"
+        android:background="@color/white"
         android:scaleType="centerCrop"
         android:src="@mipmap/teddy"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toTopOf="@+id/button_first"
-        />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button_first"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginRight="159dp"
         android:text="@string/login"
-        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pass_login" />
 
     <EditText
@@ -112,4 +112,35 @@
         android:text="@string/cria_uma"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/btn_childtest"
+        android:layout_width="114dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="92dp"
+        android:text="Menu Cirnaças"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintTop_toBottomOf="@+id/pass_login" />
+
+    <Button
+        android:id="@+id/btn_insitteste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Menu Insti"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_childtest" />
+
+    <Button
+        android:id="@+id/btn_guardteste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="17dp"
+        android:text="Menu Guardiao"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_insitteste" />
 </androidx.constraintlayout.widget.ConstraintLayout>

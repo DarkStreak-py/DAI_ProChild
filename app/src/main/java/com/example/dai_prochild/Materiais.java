@@ -23,15 +23,7 @@ public class Materiais extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(Materiais.this)
-                        .navigate(R.id.action_materiais2_to_menu_Principal);
 
-
-            }
-        });
 
     }
 

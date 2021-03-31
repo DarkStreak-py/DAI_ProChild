@@ -17,21 +17,71 @@ public class Menu_PrincipalGuardiao extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.menu_principal, container, false);
+        return inflater.inflate(R.layout.menu_principal_guardiao, container, false);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
+
+
+        view.findViewById(R.id.btnsugestoes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(Menu_PrincipalGuardiao.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                        .navigate(R.id.action_menu_PrincipalGuardiao_to_sugestoes);
 
 
             }
         });
+        view.findViewById(R.id.btn_direitos).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Menu_PrincipalGuardiao.this)
+                        .navigate(R.id.action_menu_PrincipalGuardiao_to_direitos);
+
+
+            }
+        });
+        view.findViewById(R.id.btn_materiais).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Menu_PrincipalGuardiao.this)
+                        .navigate(R.id.action_menu_PrincipalGuardiao_to_materiais2);
+
+
+            }
+        });
+        view.findViewById(R.id.btnforum).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Menu_PrincipalGuardiao.this)
+                        .navigate(R.id.action_menu_PrincipalGuardiao_to_forum4);
+
+
+            }
+        });
+
+        view.findViewById(R.id.btnconta).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Menu_PrincipalGuardiao.this)
+                        .navigate(R.id.action_menu_PrincipalGuardiao_to_perfil);
+
+
+            }
+        });
+
+        view.findViewById(R.id.btn_eventos).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Menu_PrincipalGuardiao.this)
+                        .navigate(R.id.action_menu_PrincipalGuardiao_to_eventos);
+
+
+            }
+        });
+
 
     }
 

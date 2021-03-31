@@ -89,6 +89,12 @@
         <action
             android:id="@+id/action_FirstFragment_to_menu_Principal"
             app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_FirstFragment_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
+        <action
+            android:id="@+id/action_FirstFragment_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -150,17 +156,20 @@
         android:label="menu_principal_instituicao"
         tools:layout="@layout/menu_principal_instituicao" >
         <action
-            android:id="@+id/action_menu_PrincipalInstituicao_to_direitos"
-            app:destination="@id/direitos" />
-        <action
-            android:id="@+id/action_menu_PrincipalInstituicao_to_materiais2"
-            app:destination="@id/materiais2" />
-        <action
-            android:id="@+id/action_menu_PrincipalInstituicao_to_sugestoes"
-            app:destination="@id/sugestoes" />
-        <action
             android:id="@+id/action_menu_PrincipalInstituicao_to_perfil"
             app:destination="@id/perfil" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_direitosInserir"
+            app:destination="@id/direitosInserir" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_eventos_Inserir"
+            app:destination="@id/eventos_Inserir" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_materiais_Inserir"
+            app:destination="@id/materiais_Inserir" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_forum4"
+            app:destination="@id/forum4" />
     </fragment>
     <fragment
         android:id="@+id/menu_PrincipalGuardiao"
@@ -168,23 +177,32 @@
         android:label="menu_principal_guardiao"
         tools:layout="@layout/menu_principal_guardiao" >
         <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_sugestoes"
+            app:destination="@id/sugestoes" />
+        <action
             android:id="@+id/action_menu_PrincipalGuardiao_to_forum4"
             app:destination="@id/forum4" />
         <action
-            android:id="@+id/action_menu_PrincipalGuardiao_to_direitosInserir"
-            app:destination="@id/direitosInserir" />
+            android:id="@+id/action_menu_PrincipalGuardiao_to_materiais2"
+            app:destination="@id/materiais2" />
         <action
-            android:id="@+id/action_menu_PrincipalGuardiao_to_eventos_Inserir"
-            app:destination="@id/eventos_Inserir" />
+            android:id="@+id/action_menu_PrincipalGuardiao_to_eventos"
+            app:destination="@id/eventos" />
         <action
-            android:id="@+id/action_menu_PrincipalGuardiao_to_materiais_Inserir"
-            app:destination="@id/materiais_Inserir" />
+            android:id="@+id/action_menu_PrincipalGuardiao_to_direitos"
+            app:destination="@id/direitos" />
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_denuncias"
+            app:destination="@id/denuncias" />
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_linhaApoio"
+            app:destination="@id/linhaApoio" />
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_chat_Duvidas"
+            app:destination="@id/chat_Duvidas" />
         <action
             android:id="@+id/action_menu_PrincipalGuardiao_to_perfil"
             app:destination="@id/perfil" />
-        <action
-            android:id="@+id/action_menu_PrincipalGuardiao_to_forum42"
-            app:destination="@id/forum4" />
     </fragment>
     <fragment
         android:id="@+id/forum4"
@@ -198,8 +216,8 @@
             android:id="@+id/action_forum4_to_menu_PrincipalGuardiao"
             app:destination="@id/menu_PrincipalGuardiao" />
         <action
-            android:id="@+id/action_forum4_to_menu_PrincipalGuardiao2"
-            app:destination="@id/menu_PrincipalGuardiao" />
+            android:id="@+id/action_forum4_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
     </fragment>
     <fragment
         android:id="@+id/direitosInserir"
@@ -207,8 +225,8 @@
         android:label="direitos_inserir"
         tools:layout="@layout/direitos_inserir" >
         <action
-            android:id="@+id/action_direitosInserir_to_menu_PrincipalGuardiao"
-            app:destination="@id/menu_PrincipalGuardiao" />
+            android:id="@+id/action_direitosInserir_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
     </fragment>
     <fragment
         android:id="@+id/eventos"
@@ -218,6 +236,9 @@
         <action
             android:id="@+id/action_eventos_to_menu_Principal"
             app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_eventos_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
     </fragment>
     <fragment
         android:id="@+id/sugestoes"
@@ -225,8 +246,8 @@
         android:label="sugestoes"
         tools:layout="@layout/sugestoes" >
         <action
-            android:id="@+id/action_sugestoes_to_menu_PrincipalInstituicao"
-            app:destination="@id/menu_PrincipalInstituicao" />
+            android:id="@+id/action_sugestoes_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
     </fragment>
     <fragment
         android:id="@+id/denuncias"
@@ -236,6 +257,9 @@
         <action
             android:id="@+id/action_denuncias_to_menu_Principal"
             app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_denuncias_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
     </fragment>
     <fragment
         android:id="@+id/linhaApoio"
@@ -245,6 +269,9 @@
         <action
             android:id="@+id/action_linhaApoio_to_menu_Principal"
             app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_linhaApoio_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
     </fragment>
     <fragment
         android:id="@+id/chat_Duvidas"
@@ -257,6 +284,9 @@
         <action
             android:id="@+id/action_chat_Duvidas_to_menu_Principal2"
             app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_chat_Duvidas_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
     </fragment>
     <fragment
         android:id="@+id/direitos"
@@ -267,8 +297,8 @@
             android:id="@+id/action_direitos_to_menu_Principal"
             app:destination="@id/menu_Principal" />
         <action
-            android:id="@+id/action_direitos_to_menu_PrincipalInstituicao"
-            app:destination="@id/menu_PrincipalInstituicao" />
+            android:id="@+id/action_direitos_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
     </fragment>
     <fragment
         android:id="@+id/eventos_Inserir"
@@ -276,8 +306,8 @@
         android:label="eventos_inserir"
         tools:layout="@layout/eventos_inserir" >
         <action
-            android:id="@+id/action_eventos_Inserir_to_menu_PrincipalGuardiao"
-            app:destination="@id/menu_PrincipalGuardiao" />
+            android:id="@+id/action_eventos_Inserir_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
     </fragment>
     <fragment
         android:id="@+id/materiais_Inserir"
@@ -285,8 +315,8 @@
         android:label="materias_inserir"
         tools:layout="@layout/materias_inserir" >
         <action
-            android:id="@+id/action_materiais_Inserir_to_menu_PrincipalGuardiao"
-            app:destination="@id/menu_PrincipalGuardiao" />
+            android:id="@+id/action_materiais_Inserir_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
     </fragment>
     <fragment
         android:id="@+id/materiais2"
@@ -294,10 +324,7 @@
         android:label="materias"
         tools:layout="@layout/materias" >
         <action
-            android:id="@+id/action_materiais2_to_menu_PrincipalInstituicao"
-            app:destination="@id/menu_PrincipalInstituicao" />
-        <action
-            android:id="@+id/action_materiais2_to_menu_Principal"
-            app:destination="@id/menu_Principal" />
+            android:id="@+id/action_materiais2_to_menu_PrincipalGuardiao"
+            app:destination="@id/menu_PrincipalGuardiao" />
     </fragment>
 </navigation>
