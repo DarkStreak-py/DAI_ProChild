@@ -5,26 +5,13 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu_PrincipalGuardiao">
+    tools:context=".Menu_PrincipalInstituicao">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E1DFDF">
-
-        <ImageButton
-            android:id="@+id/btnsugestoes"
-            android:layout_width="157dp"
-            android:layout_height="149dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:background="#E1DFDF"
-            android:contentDescription="TODO"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnforum"
-            app:srcCompat="@drawable/ic_sugest_esv2" />
 
         <ImageButton
             android:id="@+id/btn_direitos"
@@ -58,11 +45,11 @@
             android:id="@+id/textView15"
             android:layout_width="45dp"
             android:layout_height="20dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginTop="145dp"
             android:text="Forum"
-            app:layout_constraintBottom_toTopOf="@+id/btnsugestoes"
             app:layout_constraintEnd_toEndOf="@+id/btnforum"
-            app:layout_constraintStart_toStartOf="@+id/btnforum" />
+            app:layout_constraintStart_toStartOf="@+id/btnforum"
+            app:layout_constraintTop_toTopOf="@+id/btnforum" />
 
         <TextView
             android:id="@+id/textView16"
@@ -74,17 +61,6 @@
             app:layout_constraintHorizontal_bias="0.505"
             app:layout_constraintStart_toStartOf="@+id/btn_materiais"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="70dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="155dp"
-            android:text="Sugestões"
-            app:layout_constraintEnd_toEndOf="@+id/btnsugestoes"
-            app:layout_constraintHorizontal_bias="0.505"
-            app:layout_constraintStart_toStartOf="@+id/btnsugestoes"
-            app:layout_constraintTop_toTopOf="@+id/btnsugestoes" />
 
         <TextView
             android:id="@+id/textView14"
@@ -132,8 +108,8 @@
             android:id="@+id/btn_eventos"
             android:layout_width="68dp"
             android:layout_height="57dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginRight="60dp"
+            android:layout_marginEnd="90dp"
+            android:layout_marginRight="90dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/calendario_foreground" />

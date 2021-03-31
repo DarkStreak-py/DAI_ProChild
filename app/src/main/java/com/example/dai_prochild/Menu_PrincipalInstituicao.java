@@ -17,7 +17,7 @@ public class Menu_PrincipalInstituicao extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.menu_principal_instituicao, container, false);
+        return inflater.inflate(R.layout.menu_principal_instutuicao, container, false);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
