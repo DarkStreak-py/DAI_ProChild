@@ -9,4 +9,27 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="login">login</string>
+    <string name="nome">Nome</string>
+
+    <string name="cria_uma">Cria uma!</string>
+    <string name="password">Password</string>
+    <string name="loginbtn">Loginbtn</string>
+    <string name="n_o_tens_conta">Não tens conta?</string>
+    <string name="v">v</string>
+    <string name="a">a</string>
+    <string name="voltar">voltar</string>
+    <string name="button">Button</string>
+    <string name="cria_uma_conta">Cria uma conta</string>
+    <string name="create_password">password</string>
+    <string name="create_emaill">Email</string>
+    <string name="create_name">Name</string>
+    <string name="img_back">TODO</string>
+    <string name="criar_conta_label">Criar Conta</string>
+    <string name="perfil">Perfil</string>
+    <string name="alterar_password">Alterar Password</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="editar_avatar">Editar Avatar</string>
+    <string name="fórum">Forum</string>
+
 </resources>
