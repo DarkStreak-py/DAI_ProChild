@@ -8,8 +8,22 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+
+
 
 public class FirstFragment extends Fragment {
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference dataRef = database.getReference("Utilizadores");
+
+    public String name = "ZE";
+
 
     @Override
     public View onCreateView(
@@ -51,6 +65,17 @@ public class FirstFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_menu_PrincipalInstituicao);
+            }
+        });
+
+        view.findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                dataRef.child("User2").child("Username").setValue(name);
+
+
             }
         });
 

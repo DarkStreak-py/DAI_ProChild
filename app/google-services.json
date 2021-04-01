@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1045967512367",
+    "project_id": "dai2021",
+    "storage_bucket": "dai2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1045967512367:android:84a0a3ef790c68d29337da",
+        "android_client_info": {
+          "package_name": "com.example.dai_prochild"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1045967512367-7mfprupi1bgg21v64ifhk3nsfqssk6ig.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpZ3QtgvDN_AkRdzxxC4M7M6baJ8yOTKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1045967512367-7mfprupi1bgg21v64ifhk3nsfqssk6ig.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
