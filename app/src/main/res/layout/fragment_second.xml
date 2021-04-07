@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/txtPass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="92dp"
@@ -21,11 +21,11 @@
             android:importantForAutofill="no"
             android:inputType="textPassword"
             app:layout_constraintBottom_toTopOf="@+id/criarconta_btn"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintStart_toStartOf="@+id/txtEmail"
+            app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/txtEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
@@ -33,37 +33,37 @@
             android:ems="10"
             android:hint="@string/create_emaill"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
-            app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName2"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName2" />
+            app:layout_constraintBottom_toTopOf="@+id/txtPass"
+            app:layout_constraintStart_toStartOf="@+id/txtNome"
+            app:layout_constraintTop_toBottomOf="@+id/txtNome" />
 
         <Button
             android:id="@+id/criarconta_btn"
             android:layout_width="288dp"
             android:layout_height="0dp"
-            android:layout_marginStart="36dp"
-            android:layout_marginLeft="36dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginBottom="126dp"
             android:onClick="@string/first_fragment_label"
             android:text="@string/cria_uma_conta"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+            app:layout_constraintTop_toBottomOf="@+id/txtPass" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/txtNome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="63dp"
-            android:layout_marginLeft="63dp"
+            android:layout_marginStart="96dp"
+            android:layout_marginLeft="96dp"
             android:layout_marginTop="276dp"
             android:layout_marginBottom="16dp"
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/create_name"
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/txtEmail"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
