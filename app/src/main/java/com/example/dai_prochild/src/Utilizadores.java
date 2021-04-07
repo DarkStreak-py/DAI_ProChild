@@ -2,7 +2,7 @@ package com.example.dai_prochild.src;
 import java.io.Serializable;
 
 public class Utilizadores implements Serializable {
-    //VariÃ¡veis
+    //Variaveis
 
     protected Integer userid;
     protected String  username;
