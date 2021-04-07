@@ -1,18 +1,23 @@
 package com.example.dai_prochild;
 import com.example.dai_prochild.src.*;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class SecondFragment extends Fragment {
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference dataRef = database.getReference("Utilizadores");
+    DatabaseReference dataType = database.getReference("Type");
     private Utilizadores user;
     private ListaUtilizadores listaUtilizadores;
     @Override
@@ -24,8 +29,13 @@ public class SecondFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_second, container, false);
     }
 
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        EditText nometxt =  view.findViewById(R.id.txtNome) ;
+        EditText mailtxt =  view.findViewById(R.id.txtEmail) ;
+        EditText passtxt =  view.findViewById(R.id.txtPass) ;
+        Spinner txtspinner =  view.findViewById(R.id.spinner) ;
 
         view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,17 +51,20 @@ public class SecondFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
 
-                    EditText nometxt =  view.findViewById(R.id.txtNome) ;
-                    EditText mailtxt =  view.findViewById(R.id.txtEmail) ;
-                    EditText passtxt =  view.findViewById(R.id.txtPass) ;
-                    String value = nometxt.getText().toString();
-                    System.out.println(value);
+
+
+
                     Utilizadores novo = new Utilizadores();
+                    Type tipo = new Type();
                     novo.setNome(nometxt.getText().toString());
                     novo.setUsername(mailtxt.getText().toString());
                     novo.setPassword(passtxt.getText().toString());
 
-                    System.out.println(novo);
+                    novo.setType(txtspinner.getSelectedItem().toString());
+
+
+                    dataRef.child(novo.getNome()).setValue(novo);
+
 
                 }});}}
 

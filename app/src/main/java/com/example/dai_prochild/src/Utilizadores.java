@@ -8,6 +8,7 @@ public class Utilizadores implements Serializable {
     protected String  username;
     protected String  nome;
     protected String  password;
+    protected String  type;
 
 
 
@@ -15,11 +16,12 @@ public class Utilizadores implements Serializable {
 
     public Utilizadores() { }
     // Constructor
-    public Utilizadores(Integer userid, String username, String nome, String password) {
+    public Utilizadores(Integer userid, String username, String nome, String password, String type) {
         this.userid = userid;
         this.username = username;
         this.nome = nome;
         this.password = password;
+        this.type = type;
     }
 
     //Seletores
@@ -38,6 +40,9 @@ public class Utilizadores implements Serializable {
         return password;
 
     }
+    public String getType() {
+        return type;
+    }
 
     //Modificadores
     public void setUserid(Integer userid) {
@@ -54,6 +59,9 @@ public class Utilizadores implements Serializable {
 
     public void setPassword(String password) {
         this.password=password;
+    }
+    public void setType(String type) {
+        this.type=type;
     }
 
 

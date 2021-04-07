@@ -73,7 +73,7 @@ public class FirstFragment extends Fragment {
             public void onClick(View view) {
 
 
-                dataRef.child("User2").child("Username").setValue(name);
+             //   dataRef.child("User2").child("Username").setValue(name);
 
 
             }

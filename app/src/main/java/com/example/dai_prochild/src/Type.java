@@ -5,30 +5,30 @@ import java.io.Serializable;
 public class Type implements Serializable {
     //VariÃ¡veis
 
-    protected Integer id_type;
+    protected String id_type;
     protected String  type;
 
 
     public Type() { }
     // Constructor
-    public Type(Integer id_type, String type) {
+    public Type(String id_type, String type) {
         this.id_type = id_type;
         this.type = type;
 
     }
 
     //Seletores
-    public Integer id_type() {
+    public String getId_type() {
         return id_type;
     }
-    public String type() {
+    public String gettype() {
         return type;
     }
 
 
 
     //Modificadores
-    public void setId_type(Integer id_type) {
+    public void setId_type(String id_type) {
         this.id_type = id_type;
     }
 

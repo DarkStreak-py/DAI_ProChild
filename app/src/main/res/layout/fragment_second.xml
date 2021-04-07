@@ -43,13 +43,12 @@
             android:layout_height="0dp"
             android:layout_marginStart="60dp"
             android:layout_marginLeft="60dp"
-            android:layout_marginBottom="126dp"
+            android:layout_marginBottom="64dp"
             android:onClick="@string/first_fragment_label"
             android:text="@string/cria_uma_conta"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtPass" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/txtNome"
@@ -62,10 +61,20 @@
             android:autofillHints=""
             android:ems="10"
             android:hint="@string/create_name"
-            android:inputType="text"
+            android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/txtEmail"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:spinnerMode="dropdown"
+            android:entries="@array/spinnerItem"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPass" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
