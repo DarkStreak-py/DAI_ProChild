@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -13,20 +14,67 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.Query;
 
 
+import java.util.Iterator;
 
 
 public class FirstFragment extends Fragment {
+    String nome, pwd, nomebd, pwdbd , tipo;
+
+
+
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference dataRef = database.getReference("Utilizadores");
 
-    public String name = "ZE";
+
+    DatabaseReference dbRef = database.getReference("Utilizadores");
+
+    Query query = dbRef.orderByKey();
 
 
+    ValueEventListener queryValueListener = new ValueEventListener() {
+
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+
+            Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
+            Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
+
+           // while (iterator.hasNext()) {
+            for(int i=0 ; i <2 ; i++){
+                DataSnapshot next = (DataSnapshot) iterator.next();
+             //   System.out.println( "Value = " + next.child("nome").getValue());
+                nomebd = next.child("nome").getValue().toString();
+
+                pwdbd = next.child("password").getValue().toString();
+
+                tipo = next.child("type").getValue().toString();
+                if(nome.equals(nomebd) && pwdbd.equals(pwd)){
+                        if(tipo.equals("Guardiões")){
+                            System.out.println("Guardião");
+                        }else if (tipo.equals("Crianças")) {
+                            System.out.println("Crianças");
+                        }else{
+                            System.out.println("Instituições");
+                        }
+                }
+
+
+            }
+
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
     @Override
     public View onCreateView(
+
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
     ) {
@@ -36,6 +84,9 @@ public class FirstFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        EditText usertxt =  view.findViewById(R.id.user_login) ;
+        EditText pwdtxt =  view.findViewById(R.id.pass_login) ;
+
 
         view.findViewById(R.id.textView5).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,8 +123,9 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-
-             //   dataRef.child("User2").child("Username").setValue(name);
+                 nome = usertxt.getText().toString();
+                 pwd = pwdtxt.getText().toString();
+                query.addListenerForSingleValueEvent(queryValueListener);
 
 
             }
@@ -81,4 +133,8 @@ public class FirstFragment extends Fragment {
 
 
     }
+
+
+
+
 }
