@@ -17,19 +17,25 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="145dp"
+            android:layout_marginRight="145dp"
+            android:layout_marginBottom="83dp"
             android:text="Submeter"
-            tools:layout_editor_absoluteX="162dp"
-            tools:layout_editor_absoluteY="600dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <EditText
             android:id="@+id/editTextTextPersonName4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="245dp"
+            android:layout_marginEnd="99dp"
+            android:layout_marginRight="99dp"
             android:ems="10"
             android:hint="Denuncia"
             android:inputType="textPersonName"
-            tools:layout_editor_absoluteX="99dp"
-            tools:layout_editor_absoluteY="245dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

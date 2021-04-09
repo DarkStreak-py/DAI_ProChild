@@ -45,7 +45,7 @@ public class FirstFragment extends Fragment {
             Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
 
            // while (iterator.hasNext()) {
-            for(int i=0 ; i <2 ; i++){
+            while (iterator.hasNext()) {
                 DataSnapshot next = (DataSnapshot) iterator.next();
              //   System.out.println( "Value = " + next.child("nome").getValue());
                 nomebd = next.child("nome").getValue().toString();
@@ -63,7 +63,7 @@ public class FirstFragment extends Fragment {
                                     .navigate(R.id.action_FirstFragment_to_menu_PrincipalGuardiao);
 
 
-                        }else if (tipo.equals("Crianças")) {
+                        }else if (tipo.equals("Criança")) {
                             //System.out.println("Crianças");
                             NavHostFragment.findNavController(FirstFragment.this)
                                     .navigate(R.id.action_FirstFragment_to_menu_Principal);
