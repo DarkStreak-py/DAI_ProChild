@@ -8,7 +8,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,7 +24,8 @@ import java.util.Iterator;
 public class Direitos extends Fragment {
     String UtilizadorLigado =FirstFragment.utilizadorLigado;
     String tipobd, nomebd;
-
+    RecyclerView recview;
+    myadapter adapter;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
@@ -70,14 +74,27 @@ public class Direitos extends Fragment {
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
+
     ) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.direitos, container, false);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        recview=(RecyclerView) view.findViewById(R.id.recview);
+        recview.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
+        FirebaseRecyclerOptions<model> options =
+                new FirebaseRecyclerOptions.Builder<model>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Students"), model.class)
+                        .build();
+
+        adapter=new myadapter(options);
+        recview.setAdapter(adapter);
         view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +113,19 @@ public class Direitos extends Fragment {
         });
 
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
+
 
 
 }
