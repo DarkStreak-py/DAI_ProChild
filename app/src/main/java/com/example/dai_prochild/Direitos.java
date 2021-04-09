@@ -47,7 +47,7 @@ public class Direitos extends Fragment {
 
                 if(UtilizadorLigado.equals(nomebd)){
                     tipobd = next.child("type").getValue().toString();
-                    if(tipobd.equals("Crianças")){
+                    if(tipobd.equals("Criança")){
                         NavHostFragment.findNavController(Direitos.this)
                                 .navigate(R.id.action_direitos_to_menu_Principal);
                     }else if (tipobd.equals("Guardiões")){

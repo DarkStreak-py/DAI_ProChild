@@ -47,7 +47,7 @@ public class LinhaApoio extends Fragment {
 
                 if(UtilizadorLigado.equals(nomebd)){
                     tipobd = next.child("type").getValue().toString();
-                    if(tipobd.equals("Crianças")){
+                    if(tipobd.equals("Criança")){
                         NavHostFragment.findNavController(LinhaApoio.this)
                                 .navigate(R.id.action_linhaApoio_to_menu_Principal);
                     }

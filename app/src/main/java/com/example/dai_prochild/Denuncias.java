@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -50,7 +51,7 @@ public class Denuncias extends Fragment {
                 if(UtilizadorLigado.equals(nomebd)){
                     tipobd = next.child("type").getValue().toString();
 
-                    if(tipobd.equals("Crianças")){
+                    if(tipobd.equals("Criança")){
                         NavHostFragment.findNavController(Denuncias.this)
                                 .navigate(R.id.action_denuncias_to_menu_Principal);
                     }else if (tipobd.equals("Guardiões")){
@@ -80,7 +81,7 @@ public class Denuncias extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        EditText denuncia =  view.findViewById(R.id.denuncia) ;
         view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,11 +94,11 @@ public class Denuncias extends Fragment {
         view.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("CHEGOU");
                 Intent intent = new Intent(Intent.ACTION_SENDTO); // it's not ACTION_SEND
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject of email");
-                intent.putExtra(Intent.EXTRA_TEXT, "Body of email");
-                intent.setData(Uri.parse("mailto:default@recipient.com")); // or just "mailto:" for blank
+                //    intent.putExtra(Intent.EXTRA_SUBJECT, "Sugestões ProChild 'Direitos das Crianças'");
+                //  intent.putExtra(Intent.EXTRA_TEXT, "Sugestões:");
+
+                intent.setData(Uri.parse("mailto:grupo42dai@gmail.com?subject=Denúncias%20Pro%20Child%20'Direitos%20das%20crianças'&body="+denuncia.getText().toString())); // or just "mailto:" for blank
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // this will make such that when user returns to your app, your app is displayed, instead of the email app.
                 startActivity(intent);
 

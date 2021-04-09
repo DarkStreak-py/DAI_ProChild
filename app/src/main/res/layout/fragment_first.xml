@@ -11,12 +11,12 @@
         style="@android:style/Widget.DeviceDefault.ImageButton"
         android:layout_width="202dp"
         android:layout_height="203dp"
-        android:layout_marginStart="68dp"
-        android:layout_marginLeft="68dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
         android:layout_marginBottom="40dp"
         android:background="@color/white"
         android:scaleType="centerCrop"
-        android:src="@mipmap/teddy"
+        app:srcCompat="@drawable/urso"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/login_btn" />
@@ -128,39 +128,5 @@
         android:text="@string/cria_uma"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView4" />
-
-    <Button
-        android:id="@+id/btn_childtest"
-        android:layout_width="114dp"
-        android:layout_height="63dp"
-        android:layout_marginTop="92dp"
-        android:text="Menu Cirnaças"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toBottomOf="@+id/pass_login" />
-
-    <Button
-        android:id="@+id/btn_insitteste"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="Menu Insti"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_childtest" />
-
-    <Button
-        android:id="@+id/btn_guardteste"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="17dp"
-        android:text="Menu Guardiao"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_insitteste" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

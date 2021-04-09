@@ -47,7 +47,7 @@ public class Materiais extends Fragment {
 
                 if(UtilizadorLigado.equals(nomebd)){
                     tipobd = next.child("type").getValue().toString();
-                    if(tipobd.equals("Crianças")){
+                    if(tipobd.equals("Criança")){
                         NavHostFragment.findNavController(Materiais.this)
                                 .navigate(R.id.action_materiais2_to_menu_Principal);
                     }else if (tipobd.equals("Guardiões")){

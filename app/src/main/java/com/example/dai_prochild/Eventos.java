@@ -47,7 +47,7 @@ public class Eventos extends Fragment {
 
                 if(UtilizadorLigado.equals(nomebd)){
                     tipobd = next.child("type").getValue().toString();
-                    if(tipobd.equals("Crianças")){
+                    if(tipobd.equals("Criança")){
                         NavHostFragment.findNavController(Eventos.this)
                                 .navigate(R.id.action_eventos_to_menu_Principal);
                     }else if (tipobd.equals("Guardiões")){

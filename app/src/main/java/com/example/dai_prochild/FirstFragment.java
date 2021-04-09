@@ -64,7 +64,7 @@ public class FirstFragment extends Fragment {
 
 
                         }else if (tipo.equals("Criança")) {
-                            //System.out.println("Crianças");
+                            //System.out.println("Criança");
                             NavHostFragment.findNavController(FirstFragment.this)
                                     .navigate(R.id.action_FirstFragment_to_menu_Principal);
                         }else if(tipo.equals("Instituições")){
@@ -108,28 +108,7 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.btn_childtest).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_menu_Principal);
-            }
-        });
 
-        view.findViewById(R.id.btn_guardteste).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_menu_PrincipalGuardiao);
-            }
-        });
-        view.findViewById(R.id.btn_insitteste).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(FirstFragment.this)
-                        .navigate(R.id.action_FirstFragment_to_menu_PrincipalInstituicao);
-            }
-        });
 
         view.findViewById(R.id.login_btn).setOnClickListener(new View.OnClickListener() {
             @Override
