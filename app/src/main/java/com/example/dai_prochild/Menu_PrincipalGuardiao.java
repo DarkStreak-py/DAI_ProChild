@@ -9,7 +9,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Iterator;
+
 public class Menu_PrincipalGuardiao extends Fragment {
+
 
     @Override
     public View onCreateView(
@@ -48,7 +58,7 @@ public class Menu_PrincipalGuardiao extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(Menu_PrincipalGuardiao.this)
                         .navigate(R.id.action_menu_PrincipalGuardiao_to_materiais2);
-
+               // System.out.println(UtilizadorLigado);
 
             }
         });

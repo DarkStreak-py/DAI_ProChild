@@ -9,8 +9,62 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-public class Sugestoes extends Fragment {
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.Iterator;
+
+public class Sugestoes extends Fragment {
+    String UtilizadorLigado =FirstFragment.utilizadorLigado;
+    String tipobd, nomebd;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+
+
+    DatabaseReference dbRef = database.getReference("Utilizadores");
+
+    Query query = dbRef.orderByKey();
+
+
+    ValueEventListener queryValueListener = new ValueEventListener() {
+
+        @Override
+        public void onDataChange(DataSnapshot dataSnapshot) {
+
+            Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
+            Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
+
+            for(int i=0 ; i <2 ; i++){
+
+                DataSnapshot next = (DataSnapshot) iterator.next();
+                //   System.out.println( "Value = " + next.child("nome").getValue());
+                nomebd = next.child("nome").getValue().toString();
+                System.out.println("Sugestoes login"+UtilizadorLigado);
+                System.out.println("Sugestoes nomeb"+nomebd);
+                if(UtilizadorLigado.equals(nomebd)){
+                    tipobd = next.child("type").getValue().toString();
+                    System.out.println(tipobd);
+
+                    if(tipobd.equals("Guardiões")){
+                        NavHostFragment.findNavController(Sugestoes.this)
+                                .navigate(R.id.action_sugestoes_to_menu_PrincipalGuardiao);
+                    }
+                }
+
+
+            }
+        }
+
+        @Override
+        public void onCancelled(DatabaseError databaseError) {
+
+        }
+    };
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -23,11 +77,16 @@ public class Sugestoes extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.btn_backsugestoes).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavHostFragment.findNavController(Sugestoes.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+
+                query.addListenerForSingleValueEvent(queryValueListener);
+
+
+
+
+
 
 
             }

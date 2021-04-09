@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-
+import com.example.dai_prochild.src.*;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
@@ -23,11 +23,12 @@ import java.util.Iterator;
 public class FirstFragment extends Fragment {
     String nome, pwd, nomebd, pwdbd , tipo;
 
+    public static String utilizadorLigado;
 
 
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference dataRef = database.getReference("Utilizadores");
+
 
 
     DatabaseReference dbRef = database.getReference("Utilizadores");
@@ -53,12 +54,23 @@ public class FirstFragment extends Fragment {
 
                 tipo = next.child("type").getValue().toString();
                 if(nome.equals(nomebd) && pwdbd.equals(pwd)){
+
+                    utilizadorLigado = nome;
                         if(tipo.equals("Guardiões")){
-                            System.out.println("Guardião");
+                           // System.out.println("Guardião");
+
+                            NavHostFragment.findNavController(FirstFragment.this)
+                                    .navigate(R.id.action_FirstFragment_to_menu_PrincipalGuardiao);
+
+
                         }else if (tipo.equals("Crianças")) {
-                            System.out.println("Crianças");
-                        }else{
-                            System.out.println("Instituições");
+                            //System.out.println("Crianças");
+                            NavHostFragment.findNavController(FirstFragment.this)
+                                    .navigate(R.id.action_FirstFragment_to_menu_Principal);
+                        }else if(tipo.equals("Instituições")){
+                          //  System.out.println("Instituições");
+                            NavHostFragment.findNavController(FirstFragment.this)
+                                    .navigate(R.id.action_FirstFragment_to_menu_PrincipalInstituicao);
                         }
                 }
 
@@ -119,7 +131,7 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        view.findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.login_btn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 

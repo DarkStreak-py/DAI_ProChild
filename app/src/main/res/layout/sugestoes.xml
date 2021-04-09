@@ -16,17 +16,25 @@
             android:id="@+id/textView6"
             android:layout_width="364dp"
             android:layout_height="300dp"
+            android:layout_marginTop="273dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginRight="29dp"
             android:hint="Sugestões"
-            tools:layout_editor_absoluteX="18dp"
-            tools:layout_editor_absoluteY="273dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="164dp"
+            android:layout_marginRight="164dp"
+            android:layout_marginBottom="85dp"
             android:text="Submeter"
-            tools:layout_editor_absoluteX="143dp"
-            tools:layout_editor_absoluteY="598dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Spinner
@@ -36,7 +44,7 @@
         android:background="@color/purple_500" />
 
     <ImageButton
-        android:id="@+id/btn_back"
+        android:id="@+id/btn_backsugestoes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/purple_500"

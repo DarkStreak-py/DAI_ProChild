@@ -11,9 +11,6 @@ public class Utilizadores implements Serializable {
     protected String  type;
 
 
-
-
-
     public Utilizadores() { }
     // Constructor
     public Utilizadores(Integer userid, String username, String nome, String password, String type) {
