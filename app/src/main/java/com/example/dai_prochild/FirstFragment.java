@@ -21,9 +21,9 @@ import java.util.Iterator;
 
 
 public class FirstFragment extends Fragment {
-    String nome, pwd, nomebd, pwdbd , tipo;
+    String nome, pwd, nomebd, pwdbd , tipo, usernamebd;
 
-    public static String utilizadorLigado;
+    public static String utilizadorLigado, tipoLigado, nomeligado;
 
 
 
@@ -49,13 +49,15 @@ public class FirstFragment extends Fragment {
                 DataSnapshot next = (DataSnapshot) iterator.next();
              //   System.out.println( "Value = " + next.child("nome").getValue());
                 nomebd = next.child("nome").getValue().toString();
-
+                usernamebd = next.child("username").getValue().toString();
                 pwdbd = next.child("password").getValue().toString();
 
                 tipo = next.child("type").getValue().toString();
-                if(nome.equals(nomebd) && pwdbd.equals(pwd)){
+                if(nome.equals(usernamebd) && pwdbd.equals(pwd)){
 
-                    utilizadorLigado = nome;
+                    utilizadorLigado = usernamebd;
+                    nomeligado = next.child("nome").getValue().toString();
+                    tipoLigado =tipo;
                         if(tipo.equals("Guardiões")){
                            // System.out.println("Guardião");
 

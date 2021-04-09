@@ -4,11 +4,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.widget.EditText;
+import android.widget.TextView;
+import com.example.dai_prochild.src.*;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.dai_prochild.src.ListaUtilizadores;
+import com.example.dai_prochild.src.Utilizadores;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,10 +23,15 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Iterator;
+import java.util.Objects;
 
 public class Perfil extends Fragment {
     String UtilizadorLigado =FirstFragment.utilizadorLigado;
+    String tipoLigado =FirstFragment.tipoLigado;
+    String nomeligado =FirstFragment.nomeligado;
+
     String tipobd, nomebd;
+
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -43,7 +54,7 @@ public class Perfil extends Fragment {
 
                 DataSnapshot next = (DataSnapshot) iterator.next();
                 //   System.out.println( "Value = " + next.child("nome").getValue());
-                nomebd = next.child("nome").getValue().toString();
+                nomebd = next.child("username").getValue().toString();
 
                 if(UtilizadorLigado.equals(nomebd)){
                     tipobd = next.child("type").getValue().toString();
@@ -70,17 +81,34 @@ public class Perfil extends Fragment {
 
         }
     };
-    @Override
+
+
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
+
+
+
     ) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.perfil, container, false);
+
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        TextView showName =  view.findViewById(R.id.textView10) ;
+        TextView showUsername =  view.findViewById(R.id.textView11) ;
+        TextView showTipo =  view.findViewById(R.id.textView19) ;
+
+        showName.setText(nomeligado);
+        showUsername.setText(UtilizadorLigado);
+        showTipo.setText(tipoLigado);
+
+
+
+
+
 
         view.findViewById(R.id.btn_back2).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,14 +116,10 @@ public class Perfil extends Fragment {
 
                 query.addListenerForSingleValueEvent(queryValueListener);
 
-
-
-
-
-
-
             }
         });
+
+
 
     }
 

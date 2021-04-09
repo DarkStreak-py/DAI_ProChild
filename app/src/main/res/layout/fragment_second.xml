@@ -31,7 +31,7 @@
             android:layout_marginBottom="12dp"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/create_emaill"
+            android:hint="username"
             android:inputType="textPersonName"
             app:layout_constraintBottom_toTopOf="@+id/txtPass"
             app:layout_constraintStart_toStartOf="@+id/txtNome"
@@ -68,11 +68,13 @@
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="33dp"
-            android:spinnerMode="dropdown"
+            android:layout_width="370dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="28dp"
             android:entries="@array/spinnerItem"
+            android:spinnerMode="dropdown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtPass" />
 

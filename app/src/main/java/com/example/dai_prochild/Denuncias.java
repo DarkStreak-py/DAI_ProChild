@@ -46,7 +46,7 @@ public class Denuncias extends Fragment {
 
                 DataSnapshot next = (DataSnapshot) iterator.next();
                 //   System.out.println( "Value = " + next.child("nome").getValue());
-                nomebd = next.child("nome").getValue().toString();
+                nomebd = next.child("username").getValue().toString();
 
                 if(UtilizadorLigado.equals(nomebd)){
                     tipobd = next.child("type").getValue().toString();
