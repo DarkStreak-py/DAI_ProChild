@@ -90,11 +90,13 @@ public class Direitos extends Fragment {
 
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Students"), model.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Direitos"), model.class)
                         .build();
 
         adapter=new myadapter(options);
         recview.setAdapter(adapter);
+
+
         view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

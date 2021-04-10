@@ -95,6 +95,9 @@
         <action
             android:id="@+id/action_FirstFragment_to_menu_PrincipalInstituicao"
             app:destination="@id/menu_PrincipalInstituicao" />
+        <action
+            android:id="@+id/action_FirstFragment_to_imageTeste"
+            app:destination="@id/imageTeste" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -336,4 +339,9 @@
             android:id="@+id/action_materiais2_to_menu_Principal"
             app:destination="@id/menu_Principal" />
     </fragment>
+    <activity
+        android:id="@+id/imageTeste"
+        android:name="com.example.dai_prochild.ImageTeste"
+        android:label="imageteste"
+        tools:layout="@layout/imageteste" />
 </navigation>

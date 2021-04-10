@@ -2,15 +2,14 @@ package com.example.dai_prochild;
 
 public class model
 {
-  String name,course,email,purl;
+  String name,descricao,purl;
     model()
     {
 
     }
-    public model(String name, String course, String email, String purl) {
+    public model(String name, String descricao,  String purl) {
         this.name = name;
-        this.course = course;
-        this.email = email;
+        this.descricao = descricao;
         this.purl = purl;
     }
 
@@ -22,20 +21,12 @@ public class model
         this.name = name;
     }
 
-    public String getCourse() {
-        return course;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setCourse(String course) {
-        this.course = course;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public String getPurl() {

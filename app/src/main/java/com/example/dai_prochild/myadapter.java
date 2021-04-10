@@ -24,8 +24,7 @@ public class myadapter extends FirebaseRecyclerAdapter<model, myadapter.myviewho
     protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull model model)
     {
        holder.name.setText(model.getName());
-       holder.course.setText(model.getCourse());
-       holder.email.setText(model.getEmail());
+       holder.descricao.setText(model.getDescricao());
        Glide.with(holder.img.getContext()).load(model.getPurl()).into(holder.img);
     }
 
@@ -40,14 +39,13 @@ public class myadapter extends FirebaseRecyclerAdapter<model, myadapter.myviewho
     class myviewholder extends RecyclerView.ViewHolder
     {
         CircleImageView img;
-        TextView name,course,email;
+        TextView name,descricao;
         public myviewholder(@NonNull View itemView)
         {
             super(itemView);
             img=(CircleImageView)itemView.findViewById(R.id.img1);
             name=(TextView)itemView.findViewById(R.id.nametext);
-            course=(TextView)itemView.findViewById(R.id.coursetext);
-            email=(TextView)itemView.findViewById(R.id.emailtext);
+            descricao=(TextView)itemView.findViewById(R.id.descricaotext);
         }
     }
 }
