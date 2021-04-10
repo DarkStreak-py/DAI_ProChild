@@ -326,6 +326,9 @@
         <action
             android:id="@+id/action_materiais_Inserir_to_menu_PrincipalInstituicao"
             app:destination="@id/menu_PrincipalInstituicao" />
+        <action
+            android:id="@+id/action_materiais_Inserir_to_cartazes_Inserir"
+            app:destination="@id/cartazes_Inserir" />
     </fragment>
     <fragment
         android:id="@+id/materiais2"
@@ -338,10 +341,43 @@
         <action
             android:id="@+id/action_materiais2_to_menu_Principal"
             app:destination="@id/menu_Principal" />
+        <action
+            android:id="@+id/action_materiais2_to_cartazes2"
+            app:destination="@id/cartazes2" />
+        <action
+            android:id="@+id/action_materiais2_to_video"
+            app:destination="@id/video" />
     </fragment>
     <activity
         android:id="@+id/imageTeste"
         android:name="com.example.dai_prochild.ImageTeste"
         android:label="imageteste"
         tools:layout="@layout/imageteste" />
+    <fragment
+        android:id="@+id/cartazes2"
+        android:name="com.example.dai_prochild.Cartazes"
+        android:label="cartazes"
+        tools:layout="@layout/cartazes" >
+        <action
+            android:id="@+id/action_cartazes2_to_materiais2"
+            app:destination="@id/materiais2" />
+    </fragment>
+    <fragment
+        android:id="@+id/video"
+        android:name="com.example.dai_prochild.Video"
+        android:label="videos"
+        tools:layout="@layout/videos" >
+        <action
+            android:id="@+id/action_video_to_materiais2"
+            app:destination="@id/materiais2" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartazes_Inserir"
+        android:name="com.example.dai_prochild.Cartazes_Inserir"
+        android:label="cartazes_inserir"
+        tools:layout="@layout/cartazes_inserir" >
+        <action
+            android:id="@+id/action_cartazes_Inserir_to_materiais_Inserir"
+            app:destination="@id/materiais_Inserir" />
+    </fragment>
 </navigation>
