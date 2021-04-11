@@ -16,9 +16,45 @@
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="COLOCAR CONTACTOS"
-            tools:layout_editor_absoluteX="125dp"
-            tools:layout_editor_absoluteY="253dp" />
+            android:layout_marginTop="253dp"
+            android:layout_marginEnd="228dp"
+            android:layout_marginRight="228dp"
+            android:text="Saúde 24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sosbullying"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="41dp"
+            android:layout_marginEnd="207dp"
+            android:layout_marginRight="207dp"
+            android:text="SOS Bullying"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <TextView
+            android:id="@+id/cnpcjr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="236dp"
+            android:layout_marginRight="236dp"
+            android:text="CNPCJR"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sosbullying" />
+
+        <TextView
+            android:id="@+id/inem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:layout_marginEnd="251dp"
+            android:layout_marginRight="251dp"
+            android:text="INEM"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cnpcjr" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Spinner

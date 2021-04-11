@@ -1,5 +1,7 @@
 package com.example.dai_prochild;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -84,7 +86,54 @@ public class LinhaApoio extends Fragment {
 
             }
         });
+        view.findViewById(R.id.textView12).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:808242424"));
+                startActivity(intent);
+
+
+
+            }
+        });
+        view.findViewById(R.id.sosbullying).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:808962006"));
+                startActivity(intent);
+
+
+
+            }
+        });
+        view.findViewById(R.id.cnpcjr).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:211155270"));
+                startActivity(intent);
+
+
+
+            }
+        });
+        view.findViewById(R.id.inem).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:112"));
+                startActivity(intent);
+
+
+
+            }
+        });
     }
 
 
