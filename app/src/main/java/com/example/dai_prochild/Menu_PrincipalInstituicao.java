@@ -70,7 +70,15 @@ public class Menu_PrincipalInstituicao extends Fragment {
 
             }
         });
+        view.findViewById(R.id.btn_direitos2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Menu_PrincipalInstituicao.this)
+                        .navigate(R.id.action_menu_PrincipalInstituicao_to_direitos_Eliminar);
 
+
+            }
+        });
 
 
 

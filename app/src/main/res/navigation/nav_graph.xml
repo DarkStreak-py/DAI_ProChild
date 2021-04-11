@@ -176,6 +176,9 @@
         <action
             android:id="@+id/action_menu_PrincipalInstituicao_to_forum4"
             app:destination="@id/forum4" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_direitos_Eliminar"
+            app:destination="@id/direitos_Eliminar" />
     </fragment>
     <fragment
         android:id="@+id/menu_PrincipalGuardiao"
@@ -379,5 +382,14 @@
         <action
             android:id="@+id/action_cartazes_Inserir_to_materiais_Inserir"
             app:destination="@id/materiais_Inserir" />
+    </fragment>
+    <fragment
+        android:id="@+id/direitos_Eliminar"
+        android:name="com.example.dai_prochild.Direitos_Eliminar"
+        android:label="direitos_eliminar"
+        tools:layout="@layout/direitos_eliminar" >
+        <action
+            android:id="@+id/action_direitos_Eliminar_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
     </fragment>
 </navigation>

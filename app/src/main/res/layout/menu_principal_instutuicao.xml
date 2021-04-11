@@ -30,6 +30,22 @@
             app:srcCompat="@drawable/ic_direitosv3" />
 
         <ImageButton
+            android:id="@+id/btn_direitos2"
+            android:layout_width="160dp"
+            android:layout_height="151dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="448dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginRight="52dp"
+            android:background="#E1DFDF"
+            app:layout_constraintEnd_toStartOf="@+id/btnforum"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_direitosv3" />
+
+        <ImageButton
             android:id="@+id/btnforum"
             android:layout_width="157dp"
             android:layout_height="154dp"
