@@ -72,30 +72,7 @@ public class SecondFragment extends Fragment {
 
 
 
-    //Código Criar Conta
-      /*  public SecondFragment( @NonNull View view, Bundle savedInstanceState) {
-           super.onViewCreated(view, savedInstanceState);
-            EditText nometxt =  view.findViewById(R.id.txtNome) ;
-            EditText mailtxt =  view.findViewById(R.id.txtEmail) ;
-            EditText passtxt =  view.findViewById(R.id.txtPass) ;
 
-            Utilizadores novo = new Utilizadores();
-            novo.setNome(nometxt.getText().toString());
-            novo.setUsername(mailtxt.getText().toString());
-            novo.setPassword(passtxt.getText().toString());
-
-            view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-
-                    System.out.println(novo);
-
-                }
-            });
-
-
-*/
 
 
 

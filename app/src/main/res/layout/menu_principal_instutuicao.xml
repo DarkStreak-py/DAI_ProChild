@@ -5,6 +5,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#009688"
     tools:context=".Menu_PrincipalInstituicao">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -35,12 +36,12 @@
             android:layout_height="151dp"
             android:layout_marginStart="47dp"
             android:layout_marginLeft="47dp"
-            android:layout_marginTop="448dp"
+            android:layout_marginTop="440dp"
             android:layout_marginEnd="52dp"
             android:layout_marginRight="52dp"
             android:background="#E1DFDF"
             app:layout_constraintEnd_toStartOf="@+id/btnforum"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.586"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_direitosv3" />
@@ -134,12 +135,35 @@
             android:id="@+id/btn_materiais2"
             android:layout_width="152dp"
             android:layout_height="154dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="75dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginRight="28dp"
+            android:layout_marginBottom="272dp"
             app:layout_constraintBottom_toTopOf="@+id/textView13"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15"
             app:srcCompat="@drawable/materiais_foreground" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="132dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="155dp"
+            android:text="Materiais Eliminar"
+            app:layout_constraintEnd_toEndOf="@+id/btn_materiais2"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/btn_materiais2"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="155dp"
+            android:text="Direitor Eliminar"
+            app:layout_constraintEnd_toEndOf="@+id/btn_direitos2"
+            app:layout_constraintStart_toStartOf="@+id/btn_direitos2"
+            app:layout_constraintTop_toTopOf="@+id/btn_direitos2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
