@@ -179,6 +179,9 @@
         <action
             android:id="@+id/action_menu_PrincipalInstituicao_to_direitos_Eliminar"
             app:destination="@id/direitos_Eliminar" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_materiaisEliminar"
+            app:destination="@id/materiaisEliminar" />
     </fragment>
     <fragment
         android:id="@+id/menu_PrincipalGuardiao"
@@ -348,8 +351,8 @@
             android:id="@+id/action_materiais2_to_cartazes2"
             app:destination="@id/cartazes2" />
         <action
-            android:id="@+id/action_materiais2_to_video"
-            app:destination="@id/video" />
+            android:id="@+id/action_materiais2_to_videos"
+            app:destination="@id/videos" />
     </fragment>
     <activity
         android:id="@+id/imageTeste"
@@ -363,15 +366,6 @@
         tools:layout="@layout/cartazes" >
         <action
             android:id="@+id/action_cartazes2_to_materiais2"
-            app:destination="@id/materiais2" />
-    </fragment>
-    <fragment
-        android:id="@+id/video"
-        android:name="com.example.dai_prochild.Video"
-        android:label="videos"
-        tools:layout="@layout/videos" >
-        <action
-            android:id="@+id/action_video_to_materiais2"
             app:destination="@id/materiais2" />
     </fragment>
     <fragment
@@ -391,5 +385,23 @@
         <action
             android:id="@+id/action_direitos_Eliminar_to_menu_PrincipalInstituicao"
             app:destination="@id/menu_PrincipalInstituicao" />
+    </fragment>
+    <fragment
+        android:id="@+id/materiaisEliminar"
+        android:name="com.example.dai_prochild.MateriaisEliminar"
+        android:label="materiais_eliminar"
+        tools:layout="@layout/materiais_eliminar" >
+        <action
+            android:id="@+id/action_materiaisEliminar_to_menu_PrincipalInstituicao"
+            app:destination="@id/menu_PrincipalInstituicao" />
+    </fragment>
+    <fragment
+        android:id="@+id/videos"
+        android:name="com.example.dai_prochild.Videos"
+        android:label="videos"
+        tools:layout="@layout/videos" >
+        <action
+            android:id="@+id/action_videos_to_materiais2"
+            app:destination="@id/materiais2" />
     </fragment>
 </navigation>

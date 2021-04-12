@@ -130,6 +130,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/calendario_foreground" />
 
+        <ImageButton
+            android:id="@+id/btn_materiais2"
+            android:layout_width="152dp"
+            android:layout_height="154dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="75dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/materiais_foreground" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

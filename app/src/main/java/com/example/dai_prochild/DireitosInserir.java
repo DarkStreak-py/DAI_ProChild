@@ -121,28 +121,6 @@ public class DireitosInserir extends Fragment {
             @Override
             public void onClick(View view) {
 
-/*
-                Uri file = imageUri;
-                StorageReference riversRef = storageRef.child("images/"+file.getLastPathSegment());
-                StorageReference imageRef = storageRef.child("images/1226266503.jpeg");
-                uploadTask = riversRef.putFile(file);
-
-// Register observers to listen for when the download is done or if it fails
-                uploadTask.addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception exception) {
-                        // Handle unsuccessful uploads
-                    }
-                }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        // taskSnapshot.getMetadata() contains file metadata such as size, content-type, etc.
-                        // ...
-                         taskSnapshot.getMetadata().getReference().getDownloadUrl().toString();
-
-                    }
-                });
-*/
                 Uri file = imageUri;
                 StorageReference riversRef = storageRef.child("images/"+file.getLastPathSegment());
 
