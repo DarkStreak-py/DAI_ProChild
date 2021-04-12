@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.dai_prochild.src.Utilizadores;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,14 +33,19 @@ public class Direitos_Eliminar extends Fragment {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private Spinner spinner;
+    private Spinner spinner2;
+    private String spinner3;
     DatabaseReference direitos = database.getReference("Direitos");
 
 
     Query query2 = direitos.orderByKey();
 
+
     DatabaseReference dbRef = database.getReference("Utilizadores");
 
     Query query = dbRef.orderByKey();
+    Query query3 = direitos.orderByKey();
+
 
 
     ValueEventListener queryValueListener = new ValueEventListener() {
@@ -73,6 +79,10 @@ public class Direitos_Eliminar extends Fragment {
 
         }
     };
+
+
+
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -112,10 +122,50 @@ public class Direitos_Eliminar extends Fragment {
 
 
         spinner = (Spinner)view.findViewById(R.id.spinner4);
+        spinner2 = (Spinner)view.findViewById(R.id.spinner4);
+
         view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 query.addListenerForSingleValueEvent(queryValueListener);
+
+
+
+
+            }
+        });
+
+
+        view.findViewById(R.id.buttonDelete).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                spinner3 = spinner2.getSelectedItem().toString();
+                query3.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
+                        Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
+
+                        while (iterator.hasNext()) {
+
+                            DataSnapshot next = (DataSnapshot) iterator.next();
+
+                            String nome = next.child("name").getValue().toString();
+                                if(nome.equals(spinner3)){
+                                    direitos.child(nome).removeValue();
+                                    System.out.println(spinner3);
+                                }
+                        }
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
 
 
 
