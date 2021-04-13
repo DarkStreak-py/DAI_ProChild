@@ -4,13 +4,8 @@ package com.example.dai_prochild;
 import android.os.Bundle;
 
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -31,7 +26,7 @@ import java.util.Map;
 /**
  * Created by filipp on 6/28/2016.
  */
-public class Forum  extends Fragment {
+public class Chat_Room  extends AppCompatActivity{
     String UtilizadorLigado =FirstFragment.utilizadorLigado;
     private Button btn_send_msg;
     private EditText input_msg;
@@ -40,24 +35,19 @@ public class Forum  extends Fragment {
     private String user_name,room_name;
     private DatabaseReference root ;
     private String temp_key;
-    public View onCreateView(
-            LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState
-    ) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.forum, container, false);
-    }
 
-    public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.chatroom);
 
-        btn_send_msg = (Button) view.findViewById(R.id.btn_send);
-        input_msg = (EditText) view.findViewById(R.id.msg_input);
-        chat_conversation = (TextView) view.findViewById(R.id.textView);
+        btn_send_msg = (Button) findViewById(R.id.btn_send);
+        input_msg = (EditText) findViewById(R.id.msg_input);
+        chat_conversation = (TextView) findViewById(R.id.textView);
 
         user_name = UtilizadorLigado;
-        room_name ="Forum";
-       // setTitle(" Room - "+room_name);
+        room_name ="Teste";
+        setTitle(" Room - "+room_name);
 
         root = FirebaseDatabase.getInstance().getReference().child(room_name);
 
