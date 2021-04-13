@@ -107,6 +107,9 @@
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_escolherInstituicao"
+            app:destination="@id/escolherInstituicao" />
     </fragment>
     <fragment
         android:id="@+id/menu_Principal"
@@ -140,6 +143,9 @@
         <action
             android:id="@+id/action_menu_Principal_to_materiais22"
             app:destination="@id/materiais2" />
+        <action
+            android:id="@+id/action_menu_Principal_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
     <fragment
         android:id="@+id/perfil"
@@ -182,6 +188,9 @@
         <action
             android:id="@+id/action_menu_PrincipalInstituicao_to_materiaisEliminar"
             app:destination="@id/materiaisEliminar" />
+        <action
+            android:id="@+id/action_menu_PrincipalInstituicao_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
     <fragment
         android:id="@+id/menu_PrincipalGuardiao"
@@ -218,6 +227,9 @@
         <action
             android:id="@+id/action_menu_PrincipalGuardiao_to_materiais22"
             app:destination="@id/materiais2" />
+        <action
+            android:id="@+id/action_menu_PrincipalGuardiao_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
     <fragment
         android:id="@+id/forum4"
@@ -403,5 +415,14 @@
         <action
             android:id="@+id/action_videos_to_materiais2"
             app:destination="@id/materiais2" />
+    </fragment>
+    <fragment
+        android:id="@+id/escolherInstituicao"
+        android:name="com.example.dai_prochild.EscolherInstituicao"
+        android:label="escolher_inst"
+        tools:layout="@layout/escolher_inst" >
+        <action
+            android:id="@+id/action_escolherInstituicao_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
     </fragment>
 </navigation>

@@ -109,11 +109,12 @@
             android:id="@+id/btnconta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="100dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginEnd="168dp"
+            android:layout_marginRight="168dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
             app:layout_constraintTop_toTopOf="@+id/btn_eventos"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/user_img_foreground" />
 
         <ImageButton
@@ -121,8 +122,8 @@
             android:layout_width="68dp"
             android:layout_height="57dp"
             android:layout_marginTop="31dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginRight="70dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginRight="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_materiais"
             app:layout_constraintTop_toBottomOf="@+id/btn_materiais"
@@ -186,6 +187,15 @@
             app:layout_constraintBottom_toTopOf="@+id/duvidas_btn"
             app:layout_constraintEnd_toEndOf="@+id/btn_direitos"
             app:layout_constraintStart_toStartOf="@+id/btn_direitos" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="64dp"
+            android:layout_height="60dp"
+            android:src="@android:drawable/ic_lock_power_off"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
+            app:layout_constraintStart_toEndOf="@+id/btnconta" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

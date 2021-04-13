@@ -122,8 +122,8 @@
             android:id="@+id/btnconta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="100dp"
-            android:layout_marginRight="100dp"
+            android:layout_marginEnd="164dp"
+            android:layout_marginRight="164dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
             app:srcCompat="@drawable/user_img_foreground" />
@@ -137,6 +137,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/calendario_foreground" />
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="51dp"
+            android:layout_height="55dp"
+            android:src="@android:drawable/ic_lock_power_off"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
+            app:layout_constraintHorizontal_bias="0.534"
+            app:layout_constraintStart_toEndOf="@+id/btnconta" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

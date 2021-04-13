@@ -15,11 +15,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 public class SecondFragment extends Fragment {
+    static Utilizadores novo = new Utilizadores();
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference dataRef = database.getReference("Utilizadores");
-    DatabaseReference dataType = database.getReference("Type");
-    private Utilizadores user;
-    private ListaUtilizadores listaUtilizadores;
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -37,6 +35,8 @@ public class SecondFragment extends Fragment {
         EditText passtxt =  view.findViewById(R.id.txtPass) ;
         Spinner txtspinner =  view.findViewById(R.id.spinner) ;
 
+
+
         view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,20 +51,19 @@ public class SecondFragment extends Fragment {
                 @Override
                 public void onClick(View view) {
 
-
-
-
-                    Utilizadores novo = new Utilizadores();
-                    Type tipo = new Type();
                     novo.setNome(nometxt.getText().toString());
                     novo.setUsername(mailtxt.getText().toString());
                     novo.setPassword(passtxt.getText().toString());
 
                     novo.setType(txtspinner.getSelectedItem().toString());
 
-
-                    dataRef.child(novo.getNome()).setValue(novo);
-
+                    if (txtspinner.getSelectedItem().toString().equals("Instituições")) {
+                        NavHostFragment.findNavController(SecondFragment.this)
+                                .navigate(R.id.action_SecondFragment_to_escolherInstituicao);
+                    } else {
+                        novo.setNomeInst("");
+                        dataRef.child(novo.getNome()).setValue(novo);
+                    }
 
                 }});}}
 

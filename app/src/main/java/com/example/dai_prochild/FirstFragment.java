@@ -51,10 +51,8 @@ public class FirstFragment extends Fragment {
                 nomebd = next.child("nome").getValue().toString();
                 usernamebd = next.child("username").getValue().toString();
                 pwdbd = next.child("password").getValue().toString();
-
                 tipo = next.child("type").getValue().toString();
                 if(nome.equals(usernamebd) && pwdbd.equals(pwd)){
-
                     utilizadorLigado = usernamebd;
                     nomeligado = next.child("nome").getValue().toString();
                     tipoLigado =tipo;

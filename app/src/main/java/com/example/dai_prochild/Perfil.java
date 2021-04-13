@@ -22,13 +22,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Objects;
 
 public class Perfil extends Fragment {
     String UtilizadorLigado =FirstFragment.utilizadorLigado;
     String tipoLigado =FirstFragment.tipoLigado;
     String nomeligado =FirstFragment.nomeligado;
+    Utilizadores user;
 
     String tipobd, nomebd;
 
@@ -57,6 +60,7 @@ public class Perfil extends Fragment {
                 nomebd = next.child("username").getValue().toString();
 
                 if(UtilizadorLigado.equals(nomebd)){
+                    user = dataSnapshot.getValue(Utilizadores.class);
                     tipobd = next.child("type").getValue().toString();
                     if(tipobd.equals("Criança")){
                         NavHostFragment.findNavController(Perfil.this)
@@ -100,14 +104,53 @@ public class Perfil extends Fragment {
         TextView showName =  view.findViewById(R.id.textView10) ;
         TextView showUsername =  view.findViewById(R.id.textView11) ;
         TextView showTipo =  view.findViewById(R.id.textView19) ;
+        EditText newPwd = view.findViewById(R.id.editPassword);
 
         showName.setText(nomeligado);
         showUsername.setText(UtilizadorLigado);
         showTipo.setText(tipoLigado);
 
+        view.findViewById(R.id.editarPerfil).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String newPwdTxt = newPwd.getText().toString();
+
+                    if (!newPwdTxt.equals("")) {
+                    ValueEventListener queryValueListener = new ValueEventListener() {
+
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+
+                            Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
+                            Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
+
+                            while (iterator.hasNext()) {
+
+                                DataSnapshot next = (DataSnapshot) iterator.next();
+                                //   System.out.println( "Value = " + next.child("nome").getValue());
+                                nomebd = next.child("username").getValue().toString();
+                                if(UtilizadorLigado.equals(nomebd)) {
+                                    user = dataSnapshot.getValue(Utilizadores.class);
+                                    String nomeUser = next.child("nome").getValue().toString();
+                                    dbRef.child(nomeUser).child("password").setValue(newPwdTxt);
+                                }
+                            }
+                        }
 
 
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
 
+                        }
+
+                    };
+
+                        query.addListenerForSingleValueEvent(queryValueListener);
+
+                } else if (newPwdTxt.equals("")) {}
+            }
+        });
 
 
         view.findViewById(R.id.btn_back2).setOnClickListener(new View.OnClickListener() {

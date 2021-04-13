@@ -95,6 +95,15 @@ public class Menu_Principal extends Fragment {
 
             }
         });
+        view.findViewById(R.id.imageButton6).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Menu_Principal.this)
+                        .navigate(R.id.action_menu_Principal_to_FirstFragment);
+
+
+            }
+        });
 
     }
 
