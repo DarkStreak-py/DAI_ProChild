@@ -47,8 +47,8 @@
 
     <ImageButton
         android:id="@+id/btn_backsugestoes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="53dp"
+        android:layout_height="51dp"
         android:background="@color/purple_500"
         android:src="@drawable/abc_vector_test" />
 

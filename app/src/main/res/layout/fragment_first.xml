@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EFEDED"
     tools:context=".FirstFragment">
 
     <ImageButton
@@ -16,10 +17,10 @@
         android:layout_marginBottom="40dp"
         android:background="@color/white"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/urso"
         app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/login_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/login_btn"
+        app:srcCompat="@drawable/urso" />
 
     <Button
         android:id="@+id/login_btn"
@@ -40,11 +41,14 @@
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
         android:layout_marginTop="76dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginRight="72dp"
         android:layout_marginBottom="7dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/pass_login"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -54,7 +58,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginLeft="27dp"
-        android:layout_marginTop="223dp"
+        android:layout_marginTop="264dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:text="@string/nome"
@@ -88,10 +92,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginLeft="24dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="59dp"
         android:layout_marginEnd="26dp"
         android:layout_marginRight="26dp"
+        android:layout_marginBottom="335dp"
         android:text="@string/password"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toStartOf="@+id/pass_login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -101,9 +107,11 @@
         android:layout_width="165dp"
         android:layout_height="76dp"
         android:layout_marginTop="60dp"
+        android:layout_marginBottom="50dp"
         android:text="@string/loginbtn"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/user_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

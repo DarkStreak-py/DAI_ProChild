@@ -1,9 +1,12 @@
 package com.example.dai_prochild;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -56,8 +59,6 @@ public class Chat_Duvidas extends Fragment {
                                 .navigate(R.id.action_chat_Duvidas_to_menu_PrincipalGuardiao);
 
                     }
-
-
                 }
 
 
@@ -80,12 +81,26 @@ public class Chat_Duvidas extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        EditText duvidas =  view.findViewById(R.id.duvidas) ;
         view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 query.addListenerForSingleValueEvent(queryValueListener);
+
+
+
+            }
+        });
+        view.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_SENDTO); // it's not ACTION_SEND
+                //    intent.putExtra(Intent.EXTRA_SUBJECT, "Sugestões ProChild 'Direitos das Crianças'");
+                //  intent.putExtra(Intent.EXTRA_TEXT, "Sugestões:");
+
+                intent.setData(Uri.parse("mailto:grupo42dai@gmail.com?subject=Duvidas%20Pro%20Child%20'Direitos%20das%20crianças'&body="+duvidas.getText().toString())); // or just "mailto:" for blank
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // this will make such that when user returns to your app, your app is displayed, instead of the email app.
+                startActivity(intent);
 
 
 
@@ -93,6 +108,7 @@ public class Chat_Duvidas extends Fragment {
 
             }
         });
+
 
     }
 

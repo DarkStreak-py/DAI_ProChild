@@ -117,6 +117,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="172dp"
             android:layout_marginRight="172dp"
+            android:background="#009688"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
             app:srcCompat="@drawable/user_img_foreground" />
@@ -127,6 +128,7 @@
             android:layout_height="57dp"
             android:layout_marginEnd="56dp"
             android:layout_marginRight="56dp"
+            android:background="#009688"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/calendario_foreground" />
@@ -148,7 +150,7 @@
             android:id="@+id/textView9"
             android:layout_width="132dp"
             android:layout_height="19dp"
-            android:layout_marginTop="155dp"
+            android:layout_marginTop="165dp"
             android:text="Materiais Eliminar"
             app:layout_constraintEnd_toEndOf="@+id/btn_materiais2"
             app:layout_constraintHorizontal_bias="1.0"
@@ -169,6 +171,7 @@
             android:id="@+id/imageButton8"
             android:layout_width="59dp"
             android:layout_height="57dp"
+            android:background="#009688"
             android:src="@android:drawable/ic_lock_power_off"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
