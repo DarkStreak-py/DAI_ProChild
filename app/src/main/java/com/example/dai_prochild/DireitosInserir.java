@@ -147,7 +147,8 @@ public class DireitosInserir extends Fragment {
                             novo.setDescricao(descricaodireitostext.getText().toString());
                             novo.setName(namedireitotxt.getText().toString());
                             novo.setPurl(downloadUri.toString());
-
+                            descricaodireitostext.setText("");
+                            namedireitotxt.setText("");
                             dataDireitos.child(novo.getName()).setValue(novo);
 
                         } else {

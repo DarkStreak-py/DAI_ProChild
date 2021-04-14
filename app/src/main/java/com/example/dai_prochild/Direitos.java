@@ -58,7 +58,11 @@ public class Direitos extends Fragment {
                         NavHostFragment.findNavController(Direitos.this)
                                 .navigate(R.id.action_direitos_to_menu_PrincipalGuardiao);
 
-                    }
+                    } else if (tipobd.equals("Instituições")){
+                    NavHostFragment.findNavController(Direitos.this)
+                            .navigate(R.id.action_direitos_to_direitoIntermedio);
+
+                }
                 }
 
 

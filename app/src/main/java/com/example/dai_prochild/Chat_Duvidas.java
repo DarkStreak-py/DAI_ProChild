@@ -103,7 +103,7 @@ public class Chat_Duvidas extends Fragment {
                 startActivity(intent);
 
 
-
+                duvidas.setText("");
 
 
             }

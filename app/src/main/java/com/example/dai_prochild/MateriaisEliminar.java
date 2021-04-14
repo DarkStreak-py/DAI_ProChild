@@ -59,9 +59,9 @@ public class MateriaisEliminar extends Fragment {
 
                 if(UtilizadorLigado.equals(nomebd)){
                     tipobd = next.child("type").getValue().toString();
-                    if(tipobd.equals("Instituição")){
+                    if(tipobd.equals("Instituições")){
                         NavHostFragment.findNavController(MateriaisEliminar.this)
-                                .navigate(R.id.action_materiaisEliminar_to_menu_PrincipalInstituicao);
+                                .navigate(R.id.action_materiaisEliminar_to_materiais_Inserir);
                     }
                 }
 

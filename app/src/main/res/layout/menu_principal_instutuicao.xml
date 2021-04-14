@@ -31,22 +31,6 @@
             app:srcCompat="@drawable/ic_direitosv3" />
 
         <ImageButton
-            android:id="@+id/btn_direitos2"
-            android:layout_width="160dp"
-            android:layout_height="151dp"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="440dp"
-            android:layout_marginEnd="52dp"
-            android:layout_marginRight="52dp"
-            android:background="#E1DFDF"
-            app:layout_constraintEnd_toStartOf="@+id/btnforum"
-            app:layout_constraintHorizontal_bias="0.586"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_direitosv3" />
-
-        <ImageButton
             android:id="@+id/btnforum"
             android:layout_width="157dp"
             android:layout_height="154dp"
@@ -118,6 +102,7 @@
             android:layout_marginEnd="172dp"
             android:layout_marginRight="172dp"
             android:background="#009688"
+            android:tint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
             app:srcCompat="@drawable/user_img_foreground" />
@@ -129,43 +114,10 @@
             android:layout_marginEnd="56dp"
             android:layout_marginRight="56dp"
             android:background="#009688"
+            android:tint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/calendario_foreground" />
-
-        <ImageButton
-            android:id="@+id/btn_materiais2"
-            android:layout_width="152dp"
-            android:layout_height="154dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginRight="28dp"
-            android:layout_marginBottom="272dp"
-            app:layout_constraintBottom_toTopOf="@+id/textView13"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15"
-            app:srcCompat="@drawable/materiais_foreground" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="132dp"
-            android:layout_height="19dp"
-            android:layout_marginTop="165dp"
-            android:text="Materiais Eliminar"
-            app:layout_constraintEnd_toEndOf="@+id/btn_materiais2"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/btn_materiais2"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-        <TextView
-            android:id="@+id/textView23"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="155dp"
-            android:text="Direitor Eliminar"
-            app:layout_constraintEnd_toEndOf="@+id/btn_direitos2"
-            app:layout_constraintStart_toStartOf="@+id/btn_direitos2"
-            app:layout_constraintTop_toTopOf="@+id/btn_direitos2" />
 
         <ImageButton
             android:id="@+id/imageButton8"
@@ -173,6 +125,7 @@
             android:layout_height="57dp"
             android:background="#009688"
             android:src="@android:drawable/ic_lock_power_off"
+            android:tint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
             app:layout_constraintStart_toEndOf="@+id/btnconta" />

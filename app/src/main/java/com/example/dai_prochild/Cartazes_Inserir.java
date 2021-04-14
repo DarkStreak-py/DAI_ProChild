@@ -151,6 +151,7 @@ public class Cartazes_Inserir extends Fragment {
                             novo.setPurl(downloadUri.toString());
 
                             dataMateriais.child(novo.getName()).setValue(novo);
+                            namedescricaotxt.setText("");
 
                         } else {
                             // Handle failures

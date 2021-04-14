@@ -10,13 +10,15 @@ public class Events implements Serializable {
 
     protected String  nome;
     protected String data;
+    protected String instituicao;
 
     public Events() { }
     // Constructor
-    public Events( String nome, String data) {
+    public Events( String nome, String data, String instituicao) {
 
         this.nome = nome;
         this.data = data;
+        this.instituicao = instituicao;
 
     }
 
@@ -29,6 +31,9 @@ public class Events implements Serializable {
     public String getData() {
         return data;
     }
+    public String getInstituicao() {
+        return instituicao;
+    }
 
 
     //Modificadores
@@ -39,6 +44,9 @@ public class Events implements Serializable {
 
     public void setData(String data) {
         this.data = data;
+    }
+    public void setInstituicao(String instituicao) {
+        this.instituicao = instituicao;
     }
 
 }

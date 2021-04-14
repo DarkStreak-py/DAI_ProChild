@@ -103,7 +103,7 @@ public class Denuncias extends Fragment {
                 startActivity(intent);
 
 
-
+                denuncia.setText("");
 
 
             }

@@ -1,5 +1,7 @@
 package com.example.dai_prochild;
 
+
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -21,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Iterator;
 
-public class Sugestoes extends Fragment {
+public class DireitoIntermedio extends Fragment {
     String UtilizadorLigado =FirstFragment.utilizadorLigado;
     String tipobd, nomebd;
 
@@ -53,8 +55,12 @@ public class Sugestoes extends Fragment {
 
 
                     if(tipobd.equals("Guardiões")){
-                        NavHostFragment.findNavController(Sugestoes.this)
-                                .navigate(R.id.action_sugestoes_to_menu_PrincipalGuardiao);
+                        NavHostFragment.findNavController(DireitoIntermedio.this)
+                                .navigate(R.id.action_direitoIntermedio_to_menu_PrincipalInstituicao);
+                    }
+                    if(tipobd.equals("Instituições")){
+                        NavHostFragment.findNavController(DireitoIntermedio.this)
+                                .navigate(R.id.action_direitoIntermedio_to_menu_PrincipalInstituicao);
                     }
                 }
 
@@ -73,46 +79,50 @@ public class Sugestoes extends Fragment {
             Bundle savedInstanceState
     ) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.sugestoes, container, false);
+        return inflater.inflate(R.layout.direitointermedio, container, false);
     }
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        EditText sugestao =  view.findViewById(R.id.sugestao) ;
-        view.findViewById(R.id.btn_backsugestoes).setOnClickListener(new View.OnClickListener() {
+
+        view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 query.addListenerForSingleValueEvent(queryValueListener);
 
-
-
-
-
-
-
             }
         });
-
-        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.btn_direitos4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(Intent.ACTION_SENDTO); // it's not ACTION_SEND
-           //    intent.putExtra(Intent.EXTRA_SUBJECT, "Sugestões ProChild 'Direitos das Crianças'");
-              //  intent.putExtra(Intent.EXTRA_TEXT, "Sugestões:");
+                NavHostFragment.findNavController(DireitoIntermedio.this)
+                        .navigate(R.id.action_direitoIntermedio_to_direitosInserir);
 
-                intent.setData(Uri.parse("mailto:grupo42dai@gmail.com?subject=Sugestões%20Pro%20Child%20'Direitos%20das%20crianças'&body="+sugestao.getText().toString())); // or just "mailto:" for blank
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // this will make such that when user returns to your app, your app is displayed, instead of the email app.
-                startActivity(intent);
-
-
-                sugestao.setText("");
+            }
+        });
+        view.findViewById(R.id.btn_direitos3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(DireitoIntermedio.this)
+                        .navigate(R.id.action_direitoIntermedio_to_direitos_Eliminar);
 
 
             }
         });
+        view.findViewById(R.id.btn_direitos5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(DireitoIntermedio.this)
+                        .navigate(R.id.action_direitoIntermedio_to_direitos);
+
+
+            }
+        });
+
+
 
     }
 

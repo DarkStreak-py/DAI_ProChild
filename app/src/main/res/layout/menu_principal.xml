@@ -11,23 +11,21 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#E1DFDF">
+        android:background="#E1DFDF"
+        app:layout_anchor="@+id/constraintLayout"
+        app:layout_anchorGravity="center">
 
         <ImageButton
-            android:id="@+id/btn_direitos"
-            android:layout_width="160dp"
-            android:layout_height="151dp"
-            android:layout_marginStart="47dp"
-            android:layout_marginLeft="47dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="52dp"
-            android:layout_marginRight="52dp"
-            android:background="#E1DFDF"
-            app:layout_constraintEnd_toStartOf="@+id/btnforum"
-            app:layout_constraintHorizontal_bias="0.605"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_direitosv3" />
+            android:id="@+id/btn_materiais"
+            android:layout_width="165dp"
+            android:layout_height="156dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#E1DFDF "
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnapoio"
+            app:srcCompat="@drawable/materiais_foreground" />
 
         <ImageButton
             android:id="@+id/btnapoio"
@@ -45,11 +43,52 @@
             app:layout_constraintVertical_bias="0.333"
             app:srcCompat="@drawable/ic_contactosv1" />
 
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="103dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="12dp"
+            android:text="Linhas de Apoio"
+            app:layout_constraintBottom_toTopOf="@+id/btn_materiais"
+            app:layout_constraintEnd_toEndOf="@+id/btnapoio"
+            app:layout_constraintStart_toStartOf="@+id/btnapoio" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="53dp"
+            android:layout_height="22dp"
+            android:layout_marginBottom="2dp"
+            android:text="Direitos"
+            app:layout_constraintBottom_toTopOf="@+id/duvidas_btn"
+            app:layout_constraintEnd_toEndOf="@+id/btn_direitos"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/btn_direitos" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="61dp"
+            android:layout_height="21dp"
+            android:layout_marginTop="152dp"
+            android:text="Materiais"
+            app:layout_constraintEnd_toEndOf="@+id/btn_materiais"
+            app:layout_constraintStart_toStartOf="@+id/btn_materiais"
+            app:layout_constraintTop_toTopOf="@+id/btn_materiais" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="72dp"
+            android:layout_height="19dp"
+            android:layout_marginTop="152dp"
+            android:text="Denúncias"
+            app:layout_constraintEnd_toEndOf="@+id/denuncia_btn"
+            app:layout_constraintStart_toStartOf="@+id/denuncia_btn"
+            app:layout_constraintTop_toTopOf="@+id/denuncia_btn" />
+
         <ImageButton
             android:id="@+id/denuncia_btn"
             android:layout_width="162dp"
             android:layout_height="155dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="24dp"
             android:background="#E1DFDF"
             app:layout_constraintEnd_toStartOf="@+id/btn_materiais"
             app:layout_constraintHorizontal_bias="0.444"
@@ -58,16 +97,52 @@
             app:srcCompat="@drawable/denuncia_foreground" />
 
         <ImageButton
-            android:id="@+id/btn_materiais"
-            android:layout_width="165dp"
-            android:layout_height="156dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:background="#E1DFDF "
+            android:id="@+id/btn_direitos"
+            android:layout_width="160dp"
+            android:layout_height="151dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginLeft="47dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="52dp"
+            android:layout_marginRight="52dp"
+            android:background="#E1DFDF"
+            app:layout_constraintEnd_toStartOf="@+id/btnforum"
+            app:layout_constraintHorizontal_bias="0.571"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_direitosv3" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="45dp"
+            android:layout_height="20dp"
+            android:text="Forum"
+            app:layout_constraintBottom_toTopOf="@+id/btnapoio"
+            app:layout_constraintEnd_toEndOf="@+id/btnforum"
+            app:layout_constraintStart_toStartOf="@+id/btnforum" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="53dp"
+            android:layout_height="18dp"
+            android:layout_marginBottom="4dp"
+            android:text="Dúvidas"
+            app:layout_constraintBottom_toTopOf="@+id/denuncia_btn"
+            app:layout_constraintEnd_toEndOf="@+id/duvidas_btn"
+            app:layout_constraintHorizontal_bias="0.504"
+            app:layout_constraintStart_toStartOf="@+id/duvidas_btn" />
+
+        <ImageButton
+            android:id="@+id/btnforum"
+            android:layout_width="157dp"
+            android:layout_height="154dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:background="#E1DFDF"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnapoio"
-            app:srcCompat="@drawable/materiais_foreground" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_forumv1" />
 
         <ImageButton
             android:id="@+id/duvidas_btn"
@@ -84,22 +159,10 @@
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/ic_d_vidasv2" />
 
-        <ImageButton
-            android:id="@+id/btnforum"
-            android:layout_width="157dp"
-            android:layout_height="154dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:background="#E1DFDF"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_forumv1" />
-
         <TextView
             android:id="@+id/textView13"
-            android:layout_width="414dp"
-            android:layout_height="58dp"
+            android:layout_width="452dp"
+            android:layout_height="54dp"
             android:background="#009688"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,95 +172,42 @@
             android:id="@+id/btnconta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="168dp"
-            android:layout_marginRight="168dp"
+            android:layout_marginEnd="216dp"
+            android:layout_marginRight="216dp"
             android:background="#009688"
+            android:tint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
             app:layout_constraintTop_toTopOf="@+id/btn_eventos"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.25"
             app:srcCompat="@drawable/user_img_foreground" />
 
         <ImageButton
             android:id="@+id/btn_eventos"
-            android:layout_width="68dp"
-            android:layout_height="57dp"
+            android:layout_width="53dp"
+            android:layout_height="52dp"
             android:layout_marginTop="31dp"
             android:layout_marginEnd="32dp"
             android:layout_marginRight="32dp"
             android:background="#009688"
+            android:tint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_materiais"
             app:layout_constraintTop_toBottomOf="@+id/btn_materiais"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/calendario_foreground" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="45dp"
-            android:layout_height="20dp"
-            android:text="Forum"
-            app:layout_constraintBottom_toTopOf="@+id/btnapoio"
-            app:layout_constraintEnd_toEndOf="@+id/btnforum"
-            app:layout_constraintStart_toStartOf="@+id/btnforum" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="53dp"
-            android:layout_height="18dp"
-            android:layout_marginBottom="3dp"
-            android:text="Dúvidas"
-            app:layout_constraintBottom_toTopOf="@+id/denuncia_btn"
-            app:layout_constraintEnd_toEndOf="@+id/duvidas_btn"
-            app:layout_constraintStart_toStartOf="@+id/duvidas_btn" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="103dp"
-            android:layout_height="22dp"
-            android:text="Linhas de Apoio"
-            app:layout_constraintBottom_toTopOf="@+id/btn_materiais"
-            app:layout_constraintEnd_toEndOf="@+id/btnapoio"
-            app:layout_constraintStart_toStartOf="@+id/btnapoio" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="72dp"
-            android:layout_height="19dp"
-            android:layout_marginTop="155dp"
-            android:text="Denúncias"
-            app:layout_constraintEnd_toEndOf="@+id/denuncia_btn"
-            app:layout_constraintStart_toStartOf="@+id/denuncia_btn"
-            app:layout_constraintTop_toTopOf="@+id/denuncia_btn" />
-
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="61dp"
-            android:layout_height="21dp"
-            android:layout_marginTop="155dp"
-            android:text="Materiais"
-            app:layout_constraintEnd_toEndOf="@+id/btn_materiais"
-            app:layout_constraintStart_toStartOf="@+id/btn_materiais"
-            app:layout_constraintTop_toTopOf="@+id/btn_materiais" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="53dp"
-            android:layout_height="22dp"
-            android:layout_marginBottom="2dp"
-            android:text="Direitos"
-            app:layout_constraintBottom_toTopOf="@+id/duvidas_btn"
-            app:layout_constraintEnd_toEndOf="@+id/btn_direitos"
-            app:layout_constraintStart_toStartOf="@+id/btn_direitos" />
-
         <ImageButton
             android:id="@+id/imageButton6"
-            android:layout_width="64dp"
-            android:layout_height="60dp"
+            android:layout_width="42dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="4dp"
             android:background="#009688"
             android:src="@android:drawable/ic_lock_power_off"
+            android:tint="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_eventos"
+            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toEndOf="@+id/btnconta" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

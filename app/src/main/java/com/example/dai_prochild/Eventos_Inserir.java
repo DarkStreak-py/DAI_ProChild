@@ -1,6 +1,9 @@
 package com.example.dai_prochild;
 
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -23,12 +27,14 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 
 public class Eventos_Inserir extends Fragment {
     String UtilizadorLigado =FirstFragment.utilizadorLigado;
-    String tipobd, nomebd;
+    String tipobd, nomebd,instituicao;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -37,7 +43,8 @@ public class Eventos_Inserir extends Fragment {
     DatabaseReference dbRef = database.getReference("Utilizadores");
     DatabaseReference dbRefa = database.getReference("Eventos");
     Query query = dbRef.orderByKey();
-
+    Query query2 = dbRef.orderByKey();
+    Query query1 = dbRefa.orderByKey();
 
     ValueEventListener queryValueListener = new ValueEventListener() {
 
@@ -98,14 +105,45 @@ public class Eventos_Inserir extends Fragment {
         view.findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                query2.addValueEventListener(new ValueEventListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
 
-                Events novo = new Events();
-              //  SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
-              //  String selectedDate = sdf.format(new Date(calendario.getDate())); // get selected date in milliseconds
-                novo.setNome(editTextTextPersonName.getText().toString());
-                novo.setData(date);
-                dbRefa.child(novo.getNome()).setValue(novo);
-                editTextTextPersonName.setText("");
+                        Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
+                        Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
+
+                        while (iterator.hasNext()) {
+
+                            DataSnapshot next = (DataSnapshot) iterator.next();
+                            nomebd = next.child("username").getValue().toString();
+                            System.out.println("Ligado"+UtilizadorLigado);
+                            System.out.println(nomebd);
+                            if(UtilizadorLigado.equals(nomebd)){
+                                instituicao = next.child("nomeInst").getValue().toString();
+                                System.out.println(instituicao);
+                                System.out.println(instituicao);
+                                Events novo = new Events();
+                                //  SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
+                                //  String selectedDate = sdf.format(new Date(calendario.getDate())); // get selected date in milliseconds
+                                novo.setNome(editTextTextPersonName.getText().toString());
+                                novo.setData(date);
+                                novo.setInstituicao(instituicao);
+                                dbRefa.child(novo.getNome()).setValue(novo);
+                                editTextTextPersonName.setText("");
+
+                    }}}
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
+
+
             }
         });
 

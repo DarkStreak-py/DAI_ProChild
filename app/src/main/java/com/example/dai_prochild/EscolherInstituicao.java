@@ -41,6 +41,8 @@ public class EscolherInstituicao extends Fragment {
             public void onClick(View view) {
                 user.setNomeInst(insttxt.getText().toString());
                 dataRef.child(user.getNome()).setValue(user);
+                NavHostFragment.findNavController(EscolherInstituicao.this)
+                        .navigate(R.id.action_escolherInstituicao_to_SecondFragment);
             }
         });
     }

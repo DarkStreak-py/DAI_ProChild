@@ -94,12 +94,21 @@ public class Materiais_Inserir extends Fragment {
                 NavHostFragment.findNavController(Materiais_Inserir.this)
                         .navigate(R.id.action_materiais_Inserir_to_cartazes_Inserir);
 
-
+            }
+        });
+        view.findViewById(R.id.btn_materiais3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(Materiais_Inserir.this)
+                        .navigate(R.id.action_materiais_Inserir_to_materiaisEliminar);
 
 
             }
         });
+
     }
+
+
 
 
 }

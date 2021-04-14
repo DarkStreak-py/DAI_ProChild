@@ -56,7 +56,9 @@ public class SecondFragment extends Fragment {
                     novo.setPassword(passtxt.getText().toString());
 
                     novo.setType(txtspinner.getSelectedItem().toString());
-
+                    nometxt.setText("");
+                    mailtxt.setText("");
+                    passtxt.setText("");
                     if (txtspinner.getSelectedItem().toString().equals("Instituições")) {
                         NavHostFragment.findNavController(SecondFragment.this)
                                 .navigate(R.id.action_SecondFragment_to_escolherInstituicao);

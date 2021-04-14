@@ -31,7 +31,7 @@ import java.util.List;
 
 public class Eventos extends Fragment {
     String UtilizadorLigado =FirstFragment.utilizadorLigado;
-    String tipobd, nomebd;
+    String tipobd, nomebd, nomeint;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     private Spinner spinner5;
@@ -42,6 +42,7 @@ public class Eventos extends Fragment {
     Query query = dbRef.orderByKey();
     Query query3 = eventos.orderByKey();
     Query query4 = eventos.orderByKey();
+    Query query5 = dbRef.orderByKey();
 
     ValueEventListener queryValueListener = new ValueEventListener() {
 
@@ -129,6 +130,12 @@ public class Eventos extends Fragment {
             @Override
             public void onClick(View view) {
                 spinner6 = spinner5.getSelectedItem().toString();
+
+
+
+
+
+                System.out.println(nomeint);
                 query4.addValueEventListener(new ValueEventListener() {
                     @RequiresApi(api = Build.VERSION_CODES.N)
                     @Override
@@ -143,10 +150,11 @@ public class Eventos extends Fragment {
 
                             String nome = next.child("nome").getValue().toString();
                             String datas = next.child("data").getValue().toString();
-                            System.out.println(nome);
+
+
                             System.out.println(spinner5.getSelectedItem().toString());
                             if(nome.equals(spinner5.getSelectedItem().toString())){
-
+                                String a = next.child("instituicao").getValue().toString();
                                 int[]arr= Arrays.stream(datas.split(",")).mapToInt(Integer::parseInt).toArray();
 
                                 Calendar beginCal = Calendar.getInstance();
@@ -162,9 +170,8 @@ public class Eventos extends Fragment {
                                 intent.setType("vnd.android.cursor.item/event");
                                 intent.putExtra(CalendarContract.Events.TITLE, nome);
 
-                                intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "");
+                                intent.putExtra(CalendarContract.Events.EVENT_LOCATION, "Na instituição: "+a);
                                 intent.putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, beginCal.getTimeInMillis());
-
 
                                 intent.putExtra(CalendarContract.Events.STATUS, 1);
                                 intent.putExtra(CalendarContract.Events.VISIBLE, 0);

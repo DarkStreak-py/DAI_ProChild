@@ -28,7 +28,7 @@ public class Menu_PrincipalInstituicao extends Fragment {
             @Override
             public void onClick(View view) {
                 NavHostFragment.findNavController(Menu_PrincipalInstituicao.this)
-                        .navigate(R.id.action_menu_PrincipalInstituicao_to_direitosInserir);
+                        .navigate(R.id.action_menu_PrincipalInstituicao_to_direitoIntermedio);
 
 
             }
@@ -70,24 +70,7 @@ public class Menu_PrincipalInstituicao extends Fragment {
 
             }
         });
-        view.findViewById(R.id.btn_direitos2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(Menu_PrincipalInstituicao.this)
-                        .navigate(R.id.action_menu_PrincipalInstituicao_to_direitos_Eliminar);
 
-
-            }
-        });
-        view.findViewById(R.id.btn_materiais2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                NavHostFragment.findNavController(Menu_PrincipalInstituicao.this)
-                        .navigate(R.id.action_menu_PrincipalInstituicao_to_materiaisEliminar);
-
-
-            }
-        });
 
         view.findViewById(R.id.imageButton8).setOnClickListener(new View.OnClickListener() {
             @Override
