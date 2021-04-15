@@ -1,12 +1,19 @@
 package com.example.dai_prochild;
 
 
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +21,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dai_prochild.src.tools;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.RenderersFactory;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
+import com.google.android.exoplayer2.extractor.ExtractorsFactory;
+import com.google.android.exoplayer2.source.ExtractorMediaSource;
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
+import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.google.android.exoplayer2.trackselection.TrackSelector;
+import com.google.android.exoplayer2.ui.SimpleExoPlayerView;
+import com.google.android.exoplayer2.upstream.BandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,20 +42,27 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Iterator;
+import java.util.List;
 
 public class Videos extends Fragment {
     String UtilizadorLigado =FirstFragment.utilizadorLigado;
     String tipobd, nomebd;
-    RecyclerView recview2;
-    myAdapterVideo adapter2;
+
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-
-
+    DatabaseReference videos = database.getReference("Videos");
+    Query query3 = videos.orderByKey();
+    Query query4 = videos.orderByKey();
+    private Spinner spinner5;
+    private Spinner spinner6;
     DatabaseReference dbRef = database.getReference("Utilizadores");
 
     Query query = dbRef.orderByKey();
+    public static String Url;
 
 
     ValueEventListener queryValueListener = new ValueEventListener() {
@@ -82,45 +110,91 @@ public class Videos extends Fragment {
         return inflater.inflate(R.layout.videos, container, false);
     }
 
+
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        spinner5 = (Spinner)view.findViewById(R.id.spinner5);
+        query3.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
 
-        recview2=(RecyclerView) view.findViewById(R.id.recview3);
-        recview2.setLayoutManager(new LinearLayoutManager(getActivity()));
+                Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
+                Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
+                final List<String> titleList = new ArrayList<String>();
+                while (iterator.hasNext()) {
 
+                    DataSnapshot next = (DataSnapshot) iterator.next();
 
-        FirebaseRecyclerOptions<tools> options =
-                new FirebaseRecyclerOptions.Builder<tools>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Materiais"), tools.class)
-                        .build();
+                    String nome = next.child("name").getValue().toString();
+                    titleList.add(nome);
+                }
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_dropdown_item, titleList);
+                arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spinner5.setAdapter(arrayAdapter);
+            }
 
-        adapter2=new myAdapterVideo(options);
-        recview2.setAdapter(adapter2);
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
 
         view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
-
+            @Override
             public void onClick(View view) {
                 query.addListenerForSingleValueEvent(queryValueListener);
+
 
 
             }
         });
 
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        adapter2.startListening();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapter2.stopListening();
-    }
+        view.findViewById(R.id.button5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
 
 
-}
+                query4.addValueEventListener(new ValueEventListener() {
+                    @RequiresApi(api = Build.VERSION_CODES.N)
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        Iterable<DataSnapshot> snapshotIterator = dataSnapshot.getChildren();
+                        Iterator<DataSnapshot> iterator = snapshotIterator.iterator();
+
+                        while (iterator.hasNext()) {
+
+                            DataSnapshot next = (DataSnapshot) iterator.next();
+
+                            String nome = next.child("name").getValue().toString();
+
+
+
+                            if(nome.equals(spinner5.getSelectedItem().toString())){
+                                Url= next.child("purl").getValue().toString();
+                                NavHostFragment.findNavController(Videos.this)
+                                        .navigate(R.id.action_videos_to_myAdapterVideo);
+
+                            }
+
+
+
+
+
+                        }
+                    }
+
+
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
+
+
+            }});}}

@@ -365,6 +365,9 @@
         <action
             android:id="@+id/action_materiais_Inserir_to_materiaisEliminar"
             app:destination="@id/materiaisEliminar" />
+        <action
+            android:id="@+id/action_materiais_Inserir_to_videos_Inserir"
+            app:destination="@id/videos_Inserir" />
     </fragment>
     <fragment
         android:id="@+id/materiais2"
@@ -454,6 +457,9 @@
         <action
             android:id="@+id/action_videos_to_materiais2"
             app:destination="@id/materiais2" />
+        <action
+            android:id="@+id/action_videos_to_myAdapterVideo"
+            app:destination="@id/myAdapterVideo" />
     </fragment>
     <fragment
         android:id="@+id/escolherInstituicao"
@@ -481,5 +487,23 @@
         <action
             android:id="@+id/action_direitoIntermedio_to_direitos"
             app:destination="@id/direitos" />
+    </fragment>
+    <fragment
+        android:id="@+id/myAdapterVideo"
+        android:name="com.example.dai_prochild.myAdapterVideo"
+        android:label="show_video"
+        tools:layout="@layout/show_video" >
+        <action
+            android:id="@+id/action_myAdapterVideo_to_videos"
+            app:destination="@id/videos" />
+    </fragment>
+    <fragment
+        android:id="@+id/videos_Inserir"
+        android:name="com.example.dai_prochild.Videos_Inserir"
+        android:label="videos_inserir"
+        tools:layout="@layout/videos_inserir" >
+        <action
+            android:id="@+id/action_videos_Inserir_to_materiais_Inserir"
+            app:destination="@id/materiais_Inserir" />
     </fragment>
 </navigation>

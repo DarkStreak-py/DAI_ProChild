@@ -50,5 +50,30 @@ dependencies {
     implementation 'com.google.firebase:firebase-storage:19.2.2'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+    // dependancy for exoplayer
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.7.3'
+
+// for core support in exoplayer.
+
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.7.3'
+
+// for adding dash support in our exoplayer.
+
+
+
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.7.3'
+
+// for adding hls support in exoplayer.
+
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.7.3'
+
+// for smooth streaming of video in our exoplayer.
+
+    implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.7.3'
+
+// for generating default ui of exoplayer
+
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.7.3'
 
 }
