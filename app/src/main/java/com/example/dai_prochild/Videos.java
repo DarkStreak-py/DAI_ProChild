@@ -78,8 +78,10 @@ public class Videos extends Fragment {
                 DataSnapshot next = (DataSnapshot) iterator.next();
                 //   System.out.println( "Value = " + next.child("nome").getValue());
                 nomebd = next.child("username").getValue().toString();
-
+                System.out.println(UtilizadorLigado);
+                System.out.println(nomebd);
                 if(UtilizadorLigado.equals(nomebd)){
+                    System.out.println("entrou");
                     tipobd = next.child("type").getValue().toString();
                     if(tipobd.equals("Criança")){
                         NavHostFragment.findNavController(Videos.this)
@@ -142,6 +144,7 @@ public class Videos extends Fragment {
         view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println("yooo");
                 query.addListenerForSingleValueEvent(queryValueListener);
 
 

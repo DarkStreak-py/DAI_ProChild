@@ -31,7 +31,9 @@
                     android:layout_marginEnd="155dp"
                     android:layout_marginRight="155dp"
                     android:layout_marginBottom="401dp"
+                    android:background="#009688"
                     android:text="Ver vídeo"
+                    app:backgroundTint="#009688"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -43,14 +45,14 @@
             android:id="@+id/spinner3"
             android:layout_width="match_parent"
             android:layout_height="102dp"
-            android:background="@color/purple_500" />
+            android:background="#009688" />
 
         <ImageButton
             android:id="@+id/btn_back"
             android:layout_width="60dp"
             android:layout_height="48dp"
-            android:background="@color/purple_500"
-            android:src="@drawable/abc_vector_test" />
+            android:background="#009688"
+            app:srcCompat="@drawable/seta_foreground" />
 
         <TextView
             android:id="@+id/textView7"

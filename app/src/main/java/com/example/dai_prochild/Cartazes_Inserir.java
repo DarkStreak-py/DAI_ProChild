@@ -152,6 +152,7 @@ public class Cartazes_Inserir extends Fragment {
 
                             dataMateriais.child(novo.getName()).setValue(novo);
                             namedescricaotxt.setText("");
+                            imageView.setImageURI(null);
 
                         } else {
                             // Handle failures

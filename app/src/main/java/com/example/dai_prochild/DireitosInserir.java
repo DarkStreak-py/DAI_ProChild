@@ -150,6 +150,7 @@ public class DireitosInserir extends Fragment {
                             descricaodireitostext.setText("");
                             namedireitotxt.setText("");
                             dataDireitos.child(novo.getName()).setValue(novo);
+                            imageView.setImageURI(null);
 
                         } else {
                             // Handle failures

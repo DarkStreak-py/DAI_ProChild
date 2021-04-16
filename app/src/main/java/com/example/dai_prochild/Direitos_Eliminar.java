@@ -63,8 +63,9 @@ public class Direitos_Eliminar extends Fragment {
                 nomebd = next.child("username").getValue().toString();
 
                 if(UtilizadorLigado.equals(nomebd)){
+                    System.out.println("entrou2");
                     tipobd = next.child("type").getValue().toString();
-                    if(tipobd.equals("Instituição")){
+                    if(tipobd.equals("Instituições")){
                         NavHostFragment.findNavController(Direitos_Eliminar.this)
                                 .navigate(R.id.action_direitos_Eliminar_to_menu_PrincipalInstituicao);
                     }

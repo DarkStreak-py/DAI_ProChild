@@ -45,9 +45,11 @@
             android:layout_marginStart="60dp"
             android:layout_marginLeft="60dp"
             android:layout_marginBottom="64dp"
+            android:background="#009688"
             android:onClick="@string/first_fragment_label"
             android:text="@string/cria_uma_conta"
             android:textAllCaps="false"
+            app:backgroundTint="#009688"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -85,14 +87,14 @@
         android:id="@+id/spinner3"
         android:layout_width="match_parent"
         android:layout_height="102dp"
-        android:background="@color/purple_500" />
+        android:background="#009688" />
 
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="56dp"
         android:layout_height="46dp"
-        android:background="@color/purple_500"
-        android:src="@drawable/abc_vector_test" />
+        android:background="#009688"
+        android:src="@drawable/seta_foreground" />
 
     <TextView
         android:id="@+id/textView7"

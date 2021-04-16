@@ -155,6 +155,17 @@ public class myAdapterVideo extends Fragment {
             // handling our errors.
             //Log.e("TAG", "Error : " + e.toString());
         }
+        view.findViewById(R.id.btn_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("yooo");
+                query.addListenerForSingleValueEvent(queryValueListener);
+
+
+
+            }
+        });
     }
+
 
 }

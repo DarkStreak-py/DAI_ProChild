@@ -31,14 +31,14 @@
         android:id="@+id/spinner3"
         android:layout_width="match_parent"
         android:layout_height="102dp"
-        android:background="@color/purple_500" />
+        android:background="#009688" />
 
     <ImageButton
         android:id="@+id/btn_back"
         android:layout_width="53dp"
         android:layout_height="63dp"
-        android:background="@color/purple_500"
-        android:src="@drawable/abc_vector_test" />
+        android:background="#009688"
+        android:src="@drawable/seta_foreground" />
 
     <TextView
         android:id="@+id/textView7"
