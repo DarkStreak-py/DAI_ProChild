@@ -3,6 +3,7 @@ import com.example.dai_prochild.src.*;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,24 +51,46 @@ public class SecondFragment extends Fragment {
             view.findViewById(R.id.criarconta_btn).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
-                    novo.setNome(nometxt.getText().toString());
-                    novo.setUsername(mailtxt.getText().toString());
-                    novo.setPassword(passtxt.getText().toString());
-
-                    novo.setType(txtspinner.getSelectedItem().toString());
-                    nometxt.setText("");
-                    mailtxt.setText("");
-                    passtxt.setText("");
-                    if (txtspinner.getSelectedItem().toString().equals("Instituições")) {
-                        NavHostFragment.findNavController(SecondFragment.this)
-                                .navigate(R.id.action_SecondFragment_to_escolherInstituicao);
-                    } else {
-                        novo.setNomeInst("");
-                        dataRef.child(novo.getNome()).setValue(novo);
+                    if (nometxt.getText().toString().replaceAll("\\s+","").isEmpty()) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setMessage("Insira o seu nome de utilizador")
+                                .setTitle("Campo Obrigatório");
+                        builder.create();
+                        builder.show();
                     }
+                    else if (mailtxt.getText().toString().replaceAll("\\s+","").isEmpty()) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setMessage("Insira um username")
+                                .setTitle("Campo Obrigatório");
+                        builder.create();
+                        builder.show();
+                    }
+                    else if (passtxt.getText().toString().isEmpty()) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                        builder.setMessage("Insira uma password")
+                                .setTitle("Campo Obrigatório");
+                        builder.create();
+                        builder.show();
+                    }
+                    else {
 
-                }});}}
+                        novo.setNome(nometxt.getText().toString());
+                        novo.setUsername(mailtxt.getText().toString());
+                        novo.setPassword(passtxt.getText().toString());
+
+                        novo.setType(txtspinner.getSelectedItem().toString());
+                        nometxt.setText("");
+                        mailtxt.setText("");
+                        passtxt.setText("");
+                        if (txtspinner.getSelectedItem().toString().equals("Instituições")) {
+                            NavHostFragment.findNavController(SecondFragment.this)
+                                    .navigate(R.id.action_SecondFragment_to_escolherInstituicao);
+                        } else {
+                            novo.setNomeInst("");
+                            dataRef.child(novo.getNome()).setValue(novo); //alterar para UserName
+                        }
+
+                    }}});}}
 
 
 

@@ -1,10 +1,15 @@
 package com.example.dai_prochild;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.example.dai_prochild.src.*;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -22,8 +27,9 @@ import java.util.Iterator;
 
 public class FirstFragment extends Fragment {
     String nome, pwd, nomebd, pwdbd , tipo, usernamebd;
-
+    Boolean loggedIn = false;
     public static String utilizadorLigado, tipoLigado, nomeligado;
+
 
 
 
@@ -53,6 +59,7 @@ public class FirstFragment extends Fragment {
                 pwdbd = next.child("password").getValue().toString();
                 tipo = next.child("type").getValue().toString();
                 if(nome.equals(usernamebd) && pwdbd.equals(pwd)){
+                    loggedIn = true;
                     utilizadorLigado = usernamebd;
                     nomeligado = next.child("nome").getValue().toString();
                     tipoLigado =tipo;
@@ -75,6 +82,14 @@ public class FirstFragment extends Fragment {
                 }
 
 
+
+            }
+            if (loggedIn == false) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setMessage("Utilizador não está registado")
+                        .setTitle("Erro");
+                builder.create();
+                builder.show();
             }
 
         }
@@ -117,7 +132,25 @@ public class FirstFragment extends Fragment {
 
                  nome = usertxt.getText().toString();
                  pwd = pwdtxt.getText().toString();
-                query.addListenerForSingleValueEvent(queryValueListener);
+
+                 if (nome.isEmpty() || nome.replaceAll("\\s+","").isEmpty()) {
+                     AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                     builder.setMessage("Insira o seu nome de utilizador")
+                             .setTitle("Erro");
+                     builder.create();
+                     builder.show();
+                 }
+
+                else if (pwd.isEmpty()) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage("Insira a sua password")
+                            .setTitle("Erro");
+                    builder.create();
+                    builder.show();
+                }
+                else {
+                     query.addListenerForSingleValueEvent(queryValueListener);
+                     }
 
 
             }

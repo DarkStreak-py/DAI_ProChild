@@ -32,6 +32,8 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import java.sql.SQLOutput;
 import java.util.Iterator;
 
 import static android.app.Activity.RESULT_OK;
@@ -117,11 +119,13 @@ public class DireitosInserir extends Fragment {
 
             }
         });
+
         view.findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Uri file = imageUri;
+                //System.out.println(file.getClass());
                 StorageReference riversRef = storageRef.child("images/"+file.getLastPathSegment());
 
                 uploadTask = riversRef.putFile(file);
@@ -140,23 +144,29 @@ public class DireitosInserir extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<Uri> task) {
                         if (task.isSuccessful()) {
-                             downloadUri = task.getResult();
+                            downloadUri = task.getResult();
                             model novo = new model();
 
 
-                            novo.setDescricao(descricaodireitostext.getText().toString());
-                            novo.setName(namedireitotxt.getText().toString());
-                            novo.setPurl(downloadUri.toString());
-                            descricaodireitostext.setText("");
-                            namedireitotxt.setText("");
-                            dataDireitos.child(novo.getName()).setValue(novo);
-                            imageView.setImageURI(null);
 
-                        } else {
-                            // Handle failures
-                            // ...
+
+                                novo.setDescricao(descricaodireitostext.getText().toString());
+                                System.out.println(descricaodireitostext.getText());
+                                novo.setName(namedireitotxt.getText().toString());
+                                novo.setPurl(downloadUri.toString());
+                                descricaodireitostext.setText("");
+                                namedireitotxt.setText("");
+                                dataDireitos.child(novo.getName()).setValue(novo);
+                                imageView.setImageURI(null);
+
+
+                            }else{
+
+                                // Handle failures
+                                // ...
+                            }
                         }
-                    }
+
                 });
 
 
