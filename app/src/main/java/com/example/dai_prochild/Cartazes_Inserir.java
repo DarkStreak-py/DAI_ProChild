@@ -1,5 +1,6 @@
 package com.example.dai_prochild;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -121,53 +122,61 @@ public class Cartazes_Inserir extends Fragment {
         view.findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (imageUri == null) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage("Insira por favor uma imagem")
+                            .setTitle("Erro");
+                    builder.create();
+                    builder.show();
+                } else {
 
+                    Uri file = imageUri;
+                    StorageReference riversRef = storageRef.child("materiais/" + file.getLastPathSegment());
 
-                Uri file = imageUri;
-                StorageReference riversRef = storageRef.child("materiais/"+file.getLastPathSegment());
+                    uploadTask = riversRef.putFile(file);
 
-                uploadTask = riversRef.putFile(file);
+                    Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                        @Override
+                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                            if (!task.isSuccessful()) {
+                                throw task.getException();
+                            }
 
-                Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                    @Override
-                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if (!task.isSuccessful()) {
-                            throw task.getException();
+                            // Continue with the task to get the download URL
+                            return riversRef.getDownloadUrl();
                         }
+                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if (task.isSuccessful()) {
+                                downloadUri = task.getResult();
+                                tools novo = new tools();
 
-                        // Continue with the task to get the download URL
-                        return riversRef.getDownloadUrl();
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Uri> task) {
-                        if (task.isSuccessful()) {
-                            downloadUri = task.getResult();
-                            tools novo = new tools();
+                                if (namedescricaotxt.getText().toString().replaceAll("\\s+","").isEmpty()) {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                                    builder.setMessage("Insira o nome do cartaz")
+                                            .setTitle("Campo Obrigatório");
+                                    builder.create();
+                                    builder.show();
+                                }
+                                else{
+                                novo.setName(namedescricaotxt.getText().toString());
+                                novo.setPurl(downloadUri.toString());
 
+                                dataMateriais.child(novo.getName()).setValue(novo);
+                                namedescricaotxt.setText("");
+                                imageView.setImageURI(null);
+                                }
 
-
-                            novo.setName(namedescricaotxt.getText().toString());
-                            novo.setPurl(downloadUri.toString());
-
-                            dataMateriais.child(novo.getName()).setValue(novo);
-                            namedescricaotxt.setText("");
-                            imageView.setImageURI(null);
-
-                        } else {
-                            // Handle failures
-                            // ...
+                            } else {
+                                // Handle failures
+                                // ...
+                            }
                         }
-                    }
-                });
+                    });
 
 
-
-
-            }});
-
-
-
+                }}});
 
     }
     private void openGallery() {

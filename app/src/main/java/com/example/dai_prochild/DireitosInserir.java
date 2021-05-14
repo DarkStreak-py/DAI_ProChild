@@ -1,5 +1,6 @@
 package com.example.dai_prochild;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -124,32 +125,53 @@ public class DireitosInserir extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Uri file = imageUri;
-                //System.out.println(file.getClass());
-                StorageReference riversRef = storageRef.child("images/"+file.getLastPathSegment());
+                if (imageUri == null) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setMessage("Insira por favor uma imagem")
+                            .setTitle("Erro");
+                    builder.create();
+                    builder.show();
+                } else {
+                    Uri file = imageUri;
 
-                uploadTask = riversRef.putFile(file);
+                    StorageReference riversRef = storageRef.child("images/" + file.getLastPathSegment());
 
-                Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
-                    @Override
-                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
-                        if (!task.isSuccessful()) {
-                            throw task.getException();
+                    uploadTask = riversRef.putFile(file);
+
+                    Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                        @Override
+                        public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                            if (!task.isSuccessful()) {
+                                throw task.getException();
+                            }
+
+                            // Continue with the task to get the download URL
+                            return riversRef.getDownloadUrl();
                         }
+                    }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Uri> task) {
+                            if (task.isSuccessful()) {
+                                downloadUri = task.getResult();
+                                model novo = new model();
 
-                        // Continue with the task to get the download URL
-                        return riversRef.getDownloadUrl();
-                    }
-                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Uri> task) {
-                        if (task.isSuccessful()) {
-                            downloadUri = task.getResult();
-                            model novo = new model();
+                                if (namedireitotxt.getText().toString().replaceAll("\\s+","").isEmpty()) {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                                    builder.setMessage("Insira o nome do direito")
+                                            .setTitle("Campo Obrigatório");
+                                    builder.create();
+                                    builder.show();
+                                }
+                                else if (descricaodireitostext.getText().toString().replaceAll("\\s+","").isEmpty()) {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                                    builder.setMessage("Insira uma descrição")
+                                            .setTitle("Campo Obrigatório");
+                                    builder.create();
+                                    builder.show();
+                                }
 
 
-
-
+                                else {
                                 novo.setDescricao(descricaodireitostext.getText().toString());
                                 System.out.println(descricaodireitostext.getText());
                                 novo.setName(namedireitotxt.getText().toString());
@@ -160,18 +182,19 @@ public class DireitosInserir extends Fragment {
                                 imageView.setImageURI(null);
 
 
-                            }else{
+                                }
+
+
 
                                 // Handle failures
                                 // ...
                             }
                         }
 
-                });
+                    });
 
 
-
-
+                }
             }});
 
 
