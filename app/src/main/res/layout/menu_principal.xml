@@ -47,22 +47,22 @@
             android:id="@+id/textView17"
             android:layout_width="103dp"
             android:layout_height="22dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginTop="150dp"
             android:text="Linhas de Apoio"
-            app:layout_constraintBottom_toTopOf="@+id/btn_materiais"
             app:layout_constraintEnd_toEndOf="@+id/btnapoio"
-            app:layout_constraintStart_toStartOf="@+id/btnapoio" />
+            app:layout_constraintStart_toStartOf="@+id/btnapoio"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
         <TextView
             android:id="@+id/textView14"
             android:layout_width="53dp"
             android:layout_height="22dp"
-            android:layout_marginBottom="2dp"
+            android:layout_marginTop="148dp"
             android:text="Direitos"
-            app:layout_constraintBottom_toTopOf="@+id/duvidas_btn"
             app:layout_constraintEnd_toEndOf="@+id/btn_direitos"
             app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="@+id/btn_direitos" />
+            app:layout_constraintStart_toStartOf="@+id/btn_direitos"
+            app:layout_constraintTop_toTopOf="@+id/btn_direitos" />
 
         <TextView
             android:id="@+id/textView20"
@@ -113,15 +113,6 @@
             app:srcCompat="@drawable/ic_direitosv3" />
 
         <TextView
-            android:id="@+id/textView15"
-            android:layout_width="45dp"
-            android:layout_height="20dp"
-            android:text="Forum"
-            app:layout_constraintBottom_toTopOf="@+id/btnapoio"
-            app:layout_constraintEnd_toEndOf="@+id/btnforum"
-            app:layout_constraintStart_toStartOf="@+id/btnforum" />
-
-        <TextView
             android:id="@+id/textView16"
             android:layout_width="53dp"
             android:layout_height="18dp"
@@ -143,6 +134,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_forumv1" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="45dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="145dp"
+            android:text="Forum"
+            app:layout_constraintEnd_toEndOf="@+id/btnforum"
+            app:layout_constraintStart_toStartOf="@+id/btnforum"
+            app:layout_constraintTop_toTopOf="@+id/btnforum" />
 
         <ImageButton
             android:id="@+id/duvidas_btn"

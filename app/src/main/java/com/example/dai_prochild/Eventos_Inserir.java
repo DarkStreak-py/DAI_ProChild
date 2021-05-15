@@ -1,5 +1,6 @@
 package com.example.dai_prochild;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -126,11 +127,23 @@ public class Eventos_Inserir extends Fragment {
                                 Events novo = new Events();
                                 //  SimpleDateFormat sdf= new SimpleDateFormat("dd/MM/yyyy");
                                 //  String selectedDate = sdf.format(new Date(calendario.getDate())); // get selected date in milliseconds
-                                novo.setNome(editTextTextPersonName.getText().toString());
-                                novo.setData(date);
-                                novo.setInstituicao(instituicao);
-                                dbRefa.child(novo.getNome()).setValue(novo);
-                                editTextTextPersonName.setText("");
+
+                                if (editTextTextPersonName.getText().toString().replaceAll("\\s+","").isEmpty()) {
+                                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                                    builder.setMessage("Insira o nome do evento")
+                                            .setTitle("Campo Obrigatório");
+                                    builder.create();
+                                    builder.show();
+                                }
+                                else {
+
+
+                                    novo.setNome(editTextTextPersonName.getText().toString());
+                                    novo.setData(date);
+                                    novo.setInstituicao(instituicao);
+                                    dbRefa.child(novo.getNome()).setValue(novo);
+                                    editTextTextPersonName.setText("");
+                                }
 
                     }}}
 

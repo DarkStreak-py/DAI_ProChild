@@ -13,7 +13,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:background="#009688"
-        android:text="Send"
+        android:text="Enviar"
         app:backgroundTint="#009688" />
 
     <EditText
